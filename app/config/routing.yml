@@ -1,0 +1,16 @@
+backend:
+    resource: "@BackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ad:
+    resource: "@AdBundle/Resources/config/routing.yml"
+    prefix:   /
+
+static:
+    resource: "@StaticBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+

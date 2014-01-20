@@ -1,0 +1,7 @@
+parameters:
+#    kaiako_user.example.class: Kaiako\UserBundle\Example
+
+services:
+#    kaiako_user.example:
+#        class: %kaiako_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
