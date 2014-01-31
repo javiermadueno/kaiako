@@ -151,9 +151,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'static_homepage')), array (  '_controller' => 'kaiako\\StaticBundle\\Controller\\DefaultController::indexAction',));
             }
 
-            // user_homepage
+            // kaiako_user_homepage
             if (preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_homepage')), array (  '_controller' => 'kaiako\\UserBundle\\Controller\\DefaultController::indexAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'kaiako_user_homepage')), array (  '_controller' => 'KaiakoUserBundle:Default:index',));
             }
 
         }

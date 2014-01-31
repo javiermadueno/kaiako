@@ -22,3 +22,5 @@ e35d9e,::1,POST,http://localhost/kaiako/web/app_dev.php/_configurator/step/0,139
 27707e,::1,GET,http://localhost/kaiako/web/app_dev.php/_configurator/step/1,1390046357,
 2c4041,::1,POST,http://localhost/kaiako/web/app_dev.php/_configurator/step/1,1390046359,
 c23055,::1,GET,http://localhost/kaiako/web/app_dev.php/_configurator/final,1390046360,
+4982e2,::1,GET,http://localhost/kaiako/web/app_dev.php/,1391188714,c43f2c
+c43f2c,::1,GET,http://localhost/kaiako/web/app_dev.php/,1391188714,
