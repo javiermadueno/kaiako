@@ -1,6 +1,6 @@
 <?php
 
-namespace kaiako\StaticBundle\Tests\Controller;
+namespace Kaiako\StaticBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

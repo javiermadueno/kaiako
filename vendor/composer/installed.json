@@ -92,57 +92,6 @@
         ]
     },
     {
-        "name": "twig/twig",
-        "version": "v1.15.0",
-        "version_normalized": "1.15.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fabpot/Twig.git",
-            "reference": "85e4ff98000157ff753d934b9f13659a953f5666"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Twig/zipball/85e4ff98000157ff753d934b9f13659a953f5666",
-            "reference": "85e4ff98000157ff753d934b9f13659a953f5666",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.4"
-        },
-        "time": "2013-12-06 07:47:10",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.15-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
-        ]
-    },
-    {
         "name": "doctrine/lexer",
         "version": "v1.0",
         "version_normalized": "1.0.0.0",
@@ -237,7 +186,7 @@
         ],
         "authors": [
             {
-                "name": "Jonathan H. Wage",
+                "name": "Jonathan Wage",
                 "email": "jonwage@gmail.com",
                 "homepage": "http://www.jwage.com/",
                 "role": "Creator"
@@ -307,7 +256,7 @@
         ],
         "authors": [
             {
-                "name": "Jonathan Wage",
+                "name": "Jonathan H. Wage",
                 "email": "jonwage@gmail.com",
                 "homepage": "http://www.jwage.com/",
                 "role": "Creator"
@@ -675,123 +624,6 @@
         ]
     },
     {
-        "name": "symfony/icu",
-        "version": "v1.0.0",
-        "version_normalized": "1.0.0.0",
-        "target-dir": "Symfony/Component/Icu",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Icu.git",
-            "reference": "cac3fdfb111adbe590155f491594636d45129783"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
-            "reference": "cac3fdfb111adbe590155f491594636d45129783",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "symfony/intl": "~2.3"
-        },
-        "time": "2013-06-03 18:32:07",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Icu\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Bernhard Schussek",
-                "email": "bschussek@gmail.com"
-            }
-        ],
-        "description": "Contains an excerpt of the ICU data and classes to load it.",
-        "homepage": "http://symfony.com",
-        "keywords": [
-            "icu",
-            "intl"
-        ]
-    },
-    {
-        "name": "doctrine/dbal",
-        "version": "v2.4.2",
-        "version_normalized": "2.4.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/dbal.git",
-            "reference": "fec965d330c958e175c39e61c3f6751955af32d0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/dbal/zipball/fec965d330c958e175c39e61c3f6751955af32d0",
-            "reference": "fec965d330c958e175c39e61c3f6751955af32d0",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/common": "~2.4",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*",
-            "symfony/console": "~2.0"
-        },
-        "suggest": {
-            "symfony/console": "Allows use of the command line interface"
-        },
-        "time": "2014-01-01 16:43:57",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\DBAL\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com",
-                "homepage": "http://www.jwage.com/",
-                "role": "Creator"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com",
-                "homepage": "http://www.instaclick.com"
-            },
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            }
-        ],
-        "description": "Database Abstraction Layer",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "database",
-            "dbal",
-            "persistence",
-            "queryobject"
-        ]
-    },
-    {
         "name": "doctrine/doctrine-bundle",
         "version": "v1.2.0",
         "version_normalized": "1.2.0.0",
@@ -861,133 +693,6 @@
             "dbal",
             "orm",
             "persistence"
-        ]
-    },
-    {
-        "name": "doctrine/orm",
-        "version": "v2.4.1",
-        "version_normalized": "2.4.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/doctrine2.git",
-            "reference": "84373d05a4198ec380918d535abf83c454c3867f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/84373d05a4198ec380918d535abf83c454c3867f",
-            "reference": "84373d05a4198ec380918d535abf83c454c3867f",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/collections": "~1.1",
-            "doctrine/dbal": "~2.4",
-            "ext-pdo": "*",
-            "php": ">=5.3.2",
-            "symfony/console": "~2.0"
-        },
-        "require-dev": {
-            "satooshi/php-coveralls": "dev-master",
-            "symfony/yaml": "~2.1"
-        },
-        "suggest": {
-            "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
-        },
-        "time": "2013-11-12 12:40:13",
-        "bin": [
-            "bin/doctrine",
-            "bin/doctrine.php"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.4.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\ORM\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com",
-                "homepage": "http://www.jwage.com/",
-                "role": "Creator"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com",
-                "homepage": "http://www.instaclick.com"
-            },
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            }
-        ],
-        "description": "Object-Relational-Mapper for PHP",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "database",
-            "orm"
-        ]
-    },
-    {
-        "name": "twig/extensions",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fabpot/Twig-extensions.git",
-            "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
-            "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
-            "shasum": ""
-        },
-        "require": {
-            "twig/twig": "~1.0"
-        },
-        "time": "2013-10-18 19:37:15",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_Extensions_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Common additional features for Twig that do not directly belong in core",
-        "homepage": "https://github.com/fabpot/Twig-extensions",
-        "keywords": [
-            "debug",
-            "i18n",
-            "text"
         ]
     },
     {
@@ -1126,6 +831,190 @@
             "assets",
             "compression",
             "minification"
+        ]
+    },
+    {
+        "name": "sensio/framework-extra-bundle",
+        "version": "v3.0.0",
+        "version_normalized": "3.0.0.0",
+        "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
+            "reference": "2016a90bd032248e7d6e9da29def4959821127c8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/2016a90bd032248e7d6e9da29def4959821127c8",
+            "reference": "2016a90bd032248e7d6e9da29def4959821127c8",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": "~2.2",
+            "symfony/framework-bundle": "~2.4"
+        },
+        "require-dev": {
+            "symfony/expression-language": "~2.4",
+            "symfony/security-bundle": "~2.4"
+        },
+        "suggest": {
+            "symfony/expression-language": "",
+            "symfony/security-bundle": ""
+        },
+        "time": "2013-12-03 07:53:39",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Sensio\\Bundle\\FrameworkExtraBundle": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "This bundle provides a way to configure your controllers with annotations",
+        "keywords": [
+            "annotations",
+            "controllers"
+        ]
+    },
+    {
+        "name": "doctrine/orm",
+        "version": "v2.4.1",
+        "version_normalized": "2.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/doctrine2.git",
+            "reference": "84373d05a4198ec380918d535abf83c454c3867f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/84373d05a4198ec380918d535abf83c454c3867f",
+            "reference": "84373d05a4198ec380918d535abf83c454c3867f",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/collections": "~1.1",
+            "doctrine/dbal": "~2.4",
+            "ext-pdo": "*",
+            "php": ">=5.3.2",
+            "symfony/console": "~2.0"
+        },
+        "require-dev": {
+            "satooshi/php-coveralls": "dev-master",
+            "symfony/yaml": "~2.1"
+        },
+        "suggest": {
+            "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
+        },
+        "time": "2013-11-12 12:40:13",
+        "bin": [
+            "bin/doctrine",
+            "bin/doctrine.php"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.4.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\ORM\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/",
+                "role": "Creator"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com",
+                "homepage": "http://www.instaclick.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            }
+        ],
+        "description": "Object-Relational-Mapper for PHP",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "orm"
+        ]
+    },
+    {
+        "name": "twig/extensions",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig-extensions.git",
+            "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
+            "reference": "f91a82ec225e5bb108e01a0f93c9be04f84dcfa0",
+            "shasum": ""
+        },
+        "require": {
+            "twig/twig": "~1.0"
+        },
+        "time": "2013-10-18 19:37:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_Extensions_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Common additional features for Twig that do not directly belong in core",
+        "homepage": "https://github.com/fabpot/Twig-extensions",
+        "keywords": [
+            "debug",
+            "i18n",
+            "text"
         ]
     },
     {
@@ -1416,55 +1305,6 @@
         ]
     },
     {
-        "name": "sensio/framework-extra-bundle",
-        "version": "v2.3.4",
-        "version_normalized": "2.3.4.0",
-        "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-            "reference": "cce05719041d952bbec856789ca18646a1891d03"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/cce05719041d952bbec856789ca18646a1891d03",
-            "reference": "cce05719041d952bbec856789ca18646a1891d03",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/common": "~2.2",
-            "symfony/framework-bundle": "~2.2"
-        },
-        "time": "2013-07-24 08:49:53",
-        "type": "symfony-bundle",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Sensio\\Bundle\\FrameworkExtraBundle": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "This bundle provides a way to configure your controllers with annotations",
-        "keywords": [
-            "annotations",
-            "controllers"
-        ]
-    },
-    {
         "name": "sensio/generator-bundle",
         "version": "v2.3.4",
         "version_normalized": "2.3.4.0",
@@ -1513,6 +1353,57 @@
             }
         ],
         "description": "This bundle generates code for you"
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.15.0",
+        "version_normalized": "1.15.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "85e4ff98000157ff753d934b9f13659a953f5666"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/85e4ff98000157ff753d934b9f13659a953f5666",
+            "reference": "85e4ff98000157ff753d934b9f13659a953f5666",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2013-12-06 07:47:10",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.15-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
     },
     {
         "name": "incenteev/composer-parameter-handler",
@@ -1566,6 +1457,124 @@
         "homepage": "https://github.com/Incenteev/ParameterHandler",
         "keywords": [
             "parameters management"
+        ]
+    },
+    {
+        "name": "doctrine/dbal",
+        "version": "v2.4.2",
+        "version_normalized": "2.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/dbal.git",
+            "reference": "fec965d330c958e175c39e61c3f6751955af32d0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/doctrine/dbal/zipball/fec965d330c958e175c39e61c3f6751955af32d0",
+            "reference": "fec965d330c958e175c39e61c3f6751955af32d0",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": "~2.4",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*",
+            "symfony/console": "~2.0"
+        },
+        "suggest": {
+            "symfony/console": "Allows use of the command line interface"
+        },
+        "time": "2014-01-01 16:43:57",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\DBAL\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/",
+                "role": "Creator"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com",
+                "homepage": "http://www.instaclick.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            }
+        ],
+        "description": "Database Abstraction Layer",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "dbal",
+            "persistence",
+            "queryobject"
+        ]
+    },
+    {
+        "name": "symfony/icu",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "target-dir": "Symfony/Component/Icu",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Icu.git",
+            "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+            "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+            "shasum": ""
+        },
+        "require": {
+            "lib-icu": ">=4.4",
+            "php": ">=5.3.3",
+            "symfony/intl": "~2.3"
+        },
+        "time": "2013-06-03 18:32:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Icu\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Bernhard Schussek",
+                "email": "bschussek@gmail.com"
+            }
+        ],
+        "description": "Contains an excerpt of the ICU data and classes to load it.",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "icu",
+            "intl"
         ]
     }
 ]

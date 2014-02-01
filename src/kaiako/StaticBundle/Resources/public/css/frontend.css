@@ -1,0 +1,2524 @@
+/*
+  Objetivo de esta hoja de estilos
+  --------------------------------------------------------------
+   Incluye solamente los estilos particulares del frontend o
+   parte pública del sitio web. Esto permite aplicar estilos
+   particulares al backend y a la extranet.
+
+  Se aplica a
+  --------------------------------------------------------------
+   frontend
+
+*/
+
+@font-face{
+    font-family:'HelveticaNeueLTStdLtRegular';
+    src:url(fonts/helveticaneueltstd-lt-webfont.eot?#iefix) format('embedded-opentype'),
+        url(fonts/helveticaneueltstd-lt-webfont.woff) format('woff'),
+        url(fonts/helveticaneueltstd-lt-webfont.ttf) format('truetype'),
+        url(fonts/helveticaneueltstd-lt-webfont.svg#HelveticaNeueLTStdLtRegular) format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* ===========================================================================
+   Estructura
+   ======================================================================== */
+article {
+    float: left;
+    padding: 0 20px 20px 20px;
+    width: 1208px;
+    /*width: 980px;*/
+}
+article > section {
+    margin-bottom: 1em;
+}
+
+section:before, section:after { content: ""; display: table; }
+section:after { clear: both; }
+section { zoom: 1; }
+
+aside {
+    float: right;
+    padding: 0 20px 0 10px;
+    width: 200px;
+}
+
+.header_article{
+    float:left; 
+    margin-left:44px; 
+    border-bottom: 1px solid #ddd; 
+    width: 1115px;
+    margin-bottom: 15px;
+}
+
+.header_article h2{
+    margin: 0.2em 0;
+}
+
+.noMarginLeft{
+    margin-left: 0 !important;
+    width: 100%;
+}
+
+/* ===========================================================================
+   Cabecera y menú de navegación
+   ======================================================================== */
+.logo{
+    float: left;
+    height: 96px;
+    margin-left: 20px;
+}
+
+header nav {
+    float: left;
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    background-color: #6e6d72;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6d72), color-stop(100%, #4e4e50));
+    background-image: -webkit-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: -moz-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: -o-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    -webkit-box-shadow: #6e6d72 0px 0px 2px;
+    -moz-box-shadow: #6e6d72 0px 0px 2px;
+    box-shadow: #6e6d72 0px 0px 2px;
+    margin-top: 0;
+}
+nav ul li:last-child {
+   color: #fff;
+   padding-left: 7.5em;
+}
+nav ul li select {
+    max-width: 200px;
+    font-size: 16px;
+    margin-left: 8px;
+    display: inline-block;
+    padding: 4px;
+    margin-bottom: 9px;
+    font-size: 12px;
+    line-height: 1.3;
+    color: #222;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#portada   nav li:nth-child(1) a,
+#recientes nav li:nth-child(2) a,
+#compras   nav li:nth-child(3) a {
+    border: none;
+    color: #FF3385 !important;
+    font-size: 21px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* ===========================================================================
+   Zona lateral
+   ======================================================================== */
+#login{
+    width: 600px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 20px;
+    text-align: right;    
+}
+#login h2 {
+    color: #777;
+    margin: -.5em 0 .5em;
+    text-align: center;
+}
+
+#login p{
+    color:#404040;
+}
+
+#login .boton {
+    background-color: #008000;
+    color: #FFF;
+    display: block;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 1em;
+    padding: .5em 1em;
+    text-align: center;
+    text-shadow: none;
+}
+#login .boton:hover { background: rgba(0,128,0, 0.8); }
+aside:hover #login .boton { text-decoration: none; }
+
+#login form {
+}
+
+#login label {
+    display: block;
+    font-size: 11px !important;
+    font-weight: bold;
+}
+#login input[type="checkbox"] + label {
+    display: inline;
+}
+#login input {
+    font-size: 10px !important;
+    padding: 0px !important;
+    margin-bottom: .3em !important;
+}
+#login form input[type="submit"] {
+    margin: 0;
+    position: static;
+    background-color: #308DFF;
+    color: #fff;
+    padding: 2px 2px !important;
+    -moz-border-radius: 0px;
+    -moz-box-shadow: #4e4e50 NaNpx 0px 0px;
+    -moz-transition: -moz-;
+    -ms-transition: -ms-;
+    -o-transition: -o-;
+    -webkit-border-radius: 0px;
+    -webkit-transition: -webkit-;
+    border: 0;
+    display: inline-block;
+    text-shadow: none;
+    /*background-image: -moz-linear-gradient(90deg, #4e4e50, #6e6d72);
+    background-image: -ms-linear-gradient(90deg, #4e4e50, #6e6d72);
+    background-image: -o-linear-gradient(90deg, #4e4e50, #6e6d72);
+    background-image: -webkit-linear-gradient(90deg, #4e4e50, #6e6d72);
+    background-image: linear-gradient(90deg, #4e4e50, #6e6d72);
+    border-radius: 4px;
+    border: 1px solid #6e6d72;
+    box-shadow: #4e4e50 NaNpx 0px 0px;
+    color: #ffffff;
+    display: inline-block;
+    margin: auto;
+    padding: 2px;
+    text-decoration: none;
+    text-shadow: #000000 5px 5px 15px;*/
+}
+
+#login form input[type="submit"]:hover {
+    background-color: #777;
+}
+#login input[name="_username"] {
+    width: 170px;
+}
+#login input[name="_password"] {
+    width: 170px;
+}
+
+/* Cuando el usuario ya se ha conectado... */
+#login p strong {
+    display: block;
+    font-size: 12px;
+}
+#login a {
+    font-size: 12px;
+}
+
+.login_control_popup {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    z-index: 1;
+    right: 7px;
+    background-color: white;
+    border: 1px solid #ccc;
+    color: black;
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+aside #relacionadas ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+aside #relacionadas li {
+    font-weight: bold;
+}
+aside #relacionadas li a {
+    font-weight: normal;
+}
+
+aside #condiciones, aside #nosotros {
+    color: #444;
+}
+
+/* ===========================================================================
+   Ficha de Oferta
+   ======================================================================== */
+.oferta h1 {
+    margin-top: 0;
+}
+
+.oferta .descripcion {
+    float: left;
+    font-size: 14px;
+    width: 350px;
+}
+
+.oferta .descripcion h1 a,
+.oferta.mini .descripcion h2 a {
+    color: #C06;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-decoration: none;
+}
+.oferta.mini .descripcion h2 a {
+    font-size: 21px;
+}
+.oferta .descripcion h1 a:hover,
+.oferta.mini .descripcion h2 a:hover {
+    color: #2200C1 !important;
+}
+
+.oferta .boton {
+    font-size: 28px;
+    padding: .4em .75em;
+}
+
+.oferta .galeria {
+    font-size: 13px;
+    float: right;
+    position: relative;
+    width: 320px;
+}
+.oferta .galeria img {
+    width: 320px;
+    margin-bottom: 13px;
+}
+.oferta .galeria .precio {
+    background: rgba(0, 21, 78, 0.9);
+    color: #FFF;
+    display: inline-block;
+    font-size: 28px;
+    padding: .25em .5em;
+    position: absolute;
+    top: 192px;
+    left: 0;
+}
+.oferta .galeria .precio span {
+    color: #FF3385;
+    font-size: 21px;
+    font-weight: bold;
+    padding-left: .5em;
+    text-shadow: 0 1px 1px #00154E;
+}
+
+.oferta .estado {
+    background: #DCDCDC;
+    clear: both;
+    margin: 1em 0;
+    padding: .5em 1em;
+    overflow: hidden;
+}
+.oferta .estado div {
+    float: left;
+}
+.oferta .estado .tiempo, .oferta .estado .compras {
+    font-size: 21px;
+    line-height: 36px;
+    width: 35%;
+}
+.oferta .estado .faltan {
+    width: 30%;
+}
+.oferta .expirada .tiempo {
+    width: 60%;
+}
+.oferta .expirada .compras {
+    width: 35%;
+}
+
+.oferta .direccion {
+    float: left;
+    width: 200px;
+}
+.oferta .tienda {
+    float: right;
+    width: 450px;
+}
+.oferta .direccion h2, .oferta .tienda h2 {
+    font-size: 16px;
+    margin-bottom: .25em;
+}
+
+.oferta .direccion a {
+    display: block;
+    font-size: 18px;
+    padding-bottom: .25em;
+}
+.oferta .direccion p {
+    font-size: 14px;
+}
+
+.oferta .tienda {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* ===========================================================================
+   Mini-ficha de Oferta
+   ======================================================================== */
+.oferta.mini {
+   margin: 1em 0 2em;
+}
+
+.oferta.mini h2 {
+   margin-top: 0;
+}
+
+.oferta.mini .descripcion {
+   float: left;
+   width: 400px;
+   font-size: 14px;
+}
+.oferta.mini .descripcion p {
+   margin-top: 1em;
+}
+
+.oferta.mini .boton {
+    font-size: 21px;
+}
+
+.oferta.mini .estado {
+    background: none;
+    padding: 0 1em;
+}
+.oferta.mini .estado.expirada,
+.oferta.mini .estado.comprada {
+    font-weight: bold;
+}
+.oferta.mini .boton + .estado {
+    float: right;
+}
+
+.oferta.mini .galeria {
+   float: right;
+   width: 240px;
+}
+.oferta.mini .galeria img {
+   width: 240px;
+   margin-bottom: .5em;
+}
+.oferta.mini .galeria .precio {
+   font-size: 21px;
+   top: 145px;
+}
+.oferta.mini .cta {
+   background: #008000;
+   border-radius: 3px;
+   display: block;
+   font-size: 16px;
+   line-height: 1;
+   margin: .5em;
+   min-width: 0;
+   width: 100px;
+}
+
+/* ===========================================================================
+   Portada
+   ======================================================================== */
+#portada #anuncio {
+    background-color: #CCDAFF;
+    font-size: 18px;
+    padding: .5em 1em;
+    position: relative;
+    top: -1em;
+}
+#portada #anuncio .boton {
+    background-color: #008000;
+    margin-left: .5em;
+    text-shadow: none;
+}
+#portada #anuncio .boton:hover {
+    background-color: rgba(0,128,0, 0.8);
+}
+
+/* ===========================================================================
+   Ciudad
+   ======================================================================== */
+#ciudad aside #cercanas ul {
+    font-size: 16px;
+}
+
+/* ===========================================================================
+   Tienda
+   ======================================================================== */
+#tienda #descripcion {
+    line-height: 1.4;
+}
+
+#tienda #descripcion h1 {
+    margin-bottom: 0;
+}
+
+#tienda tr, #tienda th, #tienda td {
+    border-width: 1px 0;
+}
+
+#tienda table tr *:nth-child(5n+1),
+#tienda table tr *:nth-child(5n+2) {
+    text-align: left;
+}
+#tienda table tr *:nth-child(5n+3),
+#tienda table tr *:nth-child(5n+4),
+#tienda table tr *:nth-child(5n+5) {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ===========================================================================
+   Formularios
+   ======================================================================== */
+form label {
+    width: 150px;
+}
+
+form p.ayuda {
+    margin-left: 150px;
+}
+
+/* ===========================================================================
+   Página de login + registro
+   ======================================================================== */
+#login article {
+    position: static;
+    min-height: 400px;
+    overflow: hidden;
+    padding-top: 2em;
+    width: 100%;
+}
+#login aside {
+    display: none;
+}
+
+#login #entrar {
+    border-right: 2px solid #CCC;
+    float: left;
+    width: 48%;
+}
+#login #registrar {
+    float: right;
+    width: 48%;
+}
+
+#login #entrar h1 {
+    margin-bottom: .5em;
+    margin-left: 3em;
+}
+#login #entrar form {
+    margin-left: 6em;
+}
+
+#login #entrar input[type='text'],
+#login #entrar input[type='password'] {
+    display: block;
+}
+#login #entrar input[type='submit'] {
+    font-weight: bold;
+    padding: .5em 1em;
+    position: static;
+}
+
+#login #registrar a {
+    display: block;
+    font-size: 28px;
+    margin: 3em 2em;
+    text-align: center;
+    width: 50%;
+}
+
+.index_container{
+    float: left; 
+    width: 96%;
+    margin-left: 2%;
+    height: 587px;
+    background: url("../images/index_background.jpg") no-repeat; 
+}
+
+.index_container .index_box{
+    width: 310px;
+    margin-top: 4%;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 33px;
+}
+
+.index_container .index_box h1 {
+    margin-bottom: 15px;
+    font-size: 16pt;
+    font-style: italic;
+    color: #000;
+}
+
+.index_container .reg_subtitle {
+    font-size: 14px;
+    color: #555555;
+}
+
+.login_container{
+    float: left; 
+    width: 80%;
+    margin-left: 10%;
+    height: 544px;
+    background: url("../images/transporte-terrestre.jpg") no-repeat; 
+}
+
+.login_container .reg_desc{
+    position: relative;
+    top: 182px;
+    left: 36px;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 33px;
+    width: 374px;
+}
+
+.list_mr5 ul li{
+    margin-right: 8px !important;
+}
+
+.register_container{
+    float: left; 
+    width: 80%;
+    margin-left: 10%;
+    /*height: 580px;*/
+    background: url("../images/register_background.jpg") no-repeat; 
+    min-height: 420px;
+}
+
+.contact_container{
+    /*height: 730px;*/
+    background: url("../images/contact_us.png") no-repeat; 
+}
+
+.register_container .reg_desc{
+    position: relative;
+    top: 30px;
+    left: 27px;
+    width: 455px;
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 33px;
+}
+
+.register_container .reg_desc h1 {
+    margin-bottom: 15px;
+    font-size: 16pt;
+    font-style: italic;
+    color: #000;
+}
+
+.register_container .reg_subtitle {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.login_container .reg_desc h1 {
+    margin-bottom: 15px;
+    font-size: 16pt;
+    font-style: italic;
+    color: #000;
+}
+
+/* ===========================================================================
+   Menú de Cuenta de usuario
+   ======================================================================== */
+
+#sidebar {
+    margin-right: 10px;
+    float: left;
+    width: 206px;
+    overflow: hidden;
+    color: #404040;
+    /*font-family: arial,helvetica,sans-serif;*/
+    font-size: 12px;
+    line-height: 19px;
+    font-style: normal;
+    text-decoration: none;
+    /*z-index: 5;
+    position: absolute;*/
+}
+
+#sidebar .border{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    padding: 10px;
+}
+
+#sidebar .title{
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    overflow: hidden;
+    clear: both;
+}
+
+#sidebar ul{
+    border: 0;
+    max-height: none;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    list-style: none;
+    margin-left: 0;  
+}
+
+#sidebar .isActive, #sidebar li a:hover{
+    font-weight: bold;
+    background-color: #DDD;
+    text-decoration: none;
+}
+#userNav { padding-left: 0px;}
+
+#userNav a{
+    display: block;
+    padding: 1px 1px 1px 5px;
+}
+
+/* ===========================================================================
+   Tabla de encargos de un cliente
+   ======================================================================== */
+
+.ordersTable{
+    border: 1px solid #DDD;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    color: #404040;
+    /*font-family: arial,helvetica,sans-serif;*/
+    font-size: 12px;
+    line-height: 19px;
+    font-style: normal;
+    width: 1208px;
+    -webkit-box-shadow: #6e6d72 0px 5px 12px;
+    -moz-box-shadow: #6e6d72 0px 5px 12px;
+    box-shadow: #6e6d72 0px 5px 12px;
+}
+
+.ordersTable td {
+    padding: 8px 5px !important;
+}
+
+.ordersTable .canibPart td {
+    padding: 0px !important;
+}
+
+.ordersTable .head td {
+    line-height: 1.3em;
+    background-color: #eee;
+    padding: 5px !important;
+    vertical-align: middle;
+    border-bottom: 1px solid #CCC;
+    font-weight: bold;
+}
+
+.ordersTable .noPadding {
+    padding: 0 !important;
+}
+
+.ordersTable .orderDetails {
+    padding: 5px 10px;
+    border-top: 2px solid #ddd;
+    background-color: #eee;
+}
+
+.toCollaps{
+    border-bottom: 2px solid #ccc;
+}
+
+.hidden{
+    display: none;
+}
+
+.ordersTable .hidden {
+    clear: both;
+    float:left;
+    margin: 8px;
+    width: 1188px;
+}
+
+.ordersTable .messagesTable .hidden {
+    width: 858px;
+}
+
+.ordersTable .border{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+}
+
+.ordersTable .overflow{
+    overflow: hidden;
+}
+
+.ordersTable .vhName {
+    padding: 1px;
+    margin-bottom: 5px;
+    background-color: #efefef;
+    text-align: center;
+}
+
+.ordersTable .vhImage {
+    padding: 0 10px;
+    float: left;
+}
+
+.ordersTable .details{
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+    float: left;
+    padding: 10px; 
+    /*width: 1166px;*/
+    width: 900px;
+}
+
+.ordersTable .details_right{
+    float: right !important;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+    float: left;
+    padding: 10px;
+    width: 244px;
+}
+
+.ordersTable .messagesTable .details{
+    width: 836px;
+}
+
+.ordersTable .active, .activeRight{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.show{
+    display: block;
+}
+
+.show, .showRight{
+    display: block;
+}
+
+.noShow, .noShowRight{
+    display: none;
+}
+
+.ordersTable .articleBox {
+    /*max-width: 270px;
+    min-width: 145px;*/
+    width: 34%;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    border-left: 1px #ddd solid;
+}
+
+.ordersTable .messagesTable .articleBox {
+    max-width: 840px;
+}
+
+.ordersTable .articleBox dl, .ordersTable .articleBox dt {
+    clear: left;
+    float: left;
+}
+
+.ordersTable .articleBox dd{
+    float: right;
+    margin-bottom: 0;
+}
+
+.ordersTable .damagedAreas{
+    float: left; 
+    width: 360px;
+    height: 332px; 
+    border: 1px #ddd solid;
+}
+
+.ordersTable .tourism {
+    width: 360px; 
+}
+
+.ordersTable .truck{
+    width: 447px !important; 
+}
+
+.ordersTable .moto{
+    width: 447px !important; 
+}
+
+.ordersTable .second_button{
+    padding: 5px 10px !important;
+}
+
+.versionTable {
+    width: 100% !important;
+}
+
+.versionTable tr {
+    cursor: pointer;
+}
+
+
+.versionTable td {
+    padding: 2px 5px !important;
+}
+
+.versionTable tr:hover {
+    padding: 2px 5px !important;
+    background-color: #f0f0f0;
+}
+
+.damagedAreas .title {
+    width: 100%; 
+    text-align: center; 
+    font-weight: bold; 
+    padding: 5px 0px; 
+    border-bottom: 2px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.damagedAreas .checkArea{
+    float:left; width: 33%; padding-top: 3px;
+}
+
+.damagedAreas .leftCheck{
+    text-align: left; padding-left: 3px;
+}
+
+.damagedAreas .centerCheck{
+    text-align: center;
+}
+
+.damagedAreas .rightCheck{
+    text-align: right; right: 3px; width: 32% !important;
+}
+
+.damagedAreas .bottomCheck{
+    float:left; 
+    width: 25%; 
+    text-align: center; 
+    padding: 7px 0;
+    border-top: 1px solid #ddd;
+}
+
+.damagedAreas .checkBackArea{
+    float:left; 
+    width: 6%; 
+    text-align: left;
+    padding-top: 84px; 
+    padding-left: 3px;
+}
+.damagedAreas .checkFrontalArea{
+    float:left; 
+    width: 6%; 
+    text-align: right; 
+    padding-top: 84px; 
+    padding-right: 3px;
+}
+
+.damagedAreas .imgTourism {
+    width: 260px;
+    height: 145px;
+    float:left;
+    background-image:url("../images/img_vehicles.gif"); 
+    background-position: top center;
+    margin: 20px 25px;
+}
+
+.damagedAreas .imgMoto {
+    width: 334px;
+    height: 145px;
+    float:left;
+    background-image:url("../images/img_vehicles.gif"); 
+    background-position: top left;
+    margin: 20px 25px;
+    border: 1px #ddd solid;
+}
+
+.damagedAreas .imgTruck {
+    width: 334px;
+    height: 145px;
+    float:left;
+    background-image:url("../images/img_vehicles.gif"); 
+    background-position: top right;
+    margin: 20px 25px;
+    border: 1px #ddd solid;
+}
+
+.messagesTable{
+    width: 878px;
+}
+
+.messagesTable .articleBox dd{
+    float: none !important;
+}
+
+.messagesTable dl dd{
+    margin-left: 5.5em;
+}
+
+.noRead{
+    color: #222;
+    background: rgba(233,233,233,.9);
+    font-weight: bold;
+}
+
+.vhStatus{
+    float: left;
+    margin-left: 20px;
+}
+.status{
+    float: left;
+    width: 100%;
+}
+.status_circle {
+    height: 1.2em;
+    width: 1.2em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    border-radius: 1em;
+    border: 0.2em solid #404040;
+    background-color: #ddd;
+    float: left;
+}
+
+.active_circle{
+    /*border: 0.2em solid #308DFF;*/
+    background-color: #94C3FD;
+}
+
+.status_date{
+    float: left;
+    height: 1.5em;
+    width: 6.5em;
+    font-size: 10px;
+}
+
+.status_name{
+    float: left;
+    height: 1.5em;
+    margin-left: 10px;
+    font-size: 10px;
+}
+
+.buttonBox {
+    overflow: hidden;
+    float: left;
+    padding: 0 1px;
+}
+
+.button {
+    background: #fba336 url("../images/buttons.png") no-repeat scroll right -302px;
+    display: inline-block;
+    cursor: pointer;
+    padding-right: 3px;
+    border-bottom: 1px solid #ddd;
+    -webkit-border-bottom-right-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    font-size: 9px;
+}
+
+.button span {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button input, .button span {
+    background: url("../images/buttons.png") no-repeat scroll left -302px transparent;
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 7px 0 10px;
+    cursor: pointer;
+}
+
+.back, .back:hover {
+background-color: #ddd;
+background-position: right -272px;
+}
+
+.back input, .back:hover input, .back span, .back:hover span {
+color: #404040;
+background-position: left -242px;
+}
+
+.back:hover input, .back:hover span {
+background-position: left -272px;
+}
+
+.favorite_button{
+    padding: 0 7px 0 6px;
+}
+
+.favorite_button .star{
+    display: inline;background: url(/eurotransportcar/web/bundles/trorder/images/estrella14x14.png) no-repeat !important;
+    float: left;
+    height: 14px;
+    margin-top: 3px;
+}
+
+.favorite_button .delete{
+    display: inline;
+    background: url(/eurotransportcar/web/bundles/trorder/images/eliminar.png) no-repeat !important;
+    float: left;
+    height: 13px;
+    margin-top: 4px;
+}
+
+.favorite_button .text{
+    display: inline;
+    background: none;
+    padding-left: 4px;
+    margin-right: 6px;
+}
+
+.favorite-triangle{
+   background: url(../images/star30.png) no-repeat 0 0;
+    font-size: 0px; 
+    line-height: 0%; 
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 5;
+    display: none;
+}
+
+.triangle-mini{
+    width:  20px;
+    height: 20px;
+    background: url(../images/star20.png) no-repeat 0 0;
+}
+
+.indicator
+{
+  margin: auto;
+  width: 16px;
+  height: 16px;
+  background: url(../images/indicator.gif) no-repeat 0 0;
+}
+
+.indicator_big
+{
+  margin: 40px auto;
+  width: 200px;
+  height: 200px;
+  background: url(../images/loader200x200.gif) no-repeat 0 0;
+}
+
+/* ===========================================================================
+   Lista de encargos pública
+   ======================================================================== */
+.menu_filter_trorders{
+    position: relative;
+    float: right;
+    margin-right: 49px;
+    text-align: right;
+    top: 27px; 
+}
+.list_orders{
+    list-style: none;
+    margin-left: 44px !important;
+    padding-left: 0 !important;
+    text-align: left;
+}
+
+.list_orders, .list_orders li {
+    width: 1113px;
+}
+
+.list_orders li{
+    display: inline-block;
+    overflow: hidden;
+    border: solid 1px #ddd;
+    border-left: none;
+}
+
+.list_orders li span {
+    display: block;
+}
+
+.list_orders li .dvfirst {
+    position: relative;
+    width: 64%;
+}
+
+.list_orders li .dvfirst, .list_orders li .dvmid, .list_orders li .dvlast {
+    display: inline-block;
+    float: left;
+    border-right: solid 1px #ddd;
+}
+
+.list_orders .cont-img {
+    float: left;
+    position: absolute;
+    z-index: 2;
+    width: 8em;
+    background-color: #fff;
+}
+
+.list_orders .dvfirst .cont {
+    border-left: solid 1px #ddd;
+    margin-left: 8em;
+    padding: 1em 1.5em;
+    float: left;
+    width: 48.9em;
+}
+
+.list_orders li .dvmid {
+    width: 16%;
+    height: 6.1em;
+}
+
+.list_orders li .dvlast {
+    width: 11.7%;
+    height: 6.1em;
+    color: #fff;
+}
+
+.list_orders li .dvmid, .list_orders li .dvlast {
+    padding: 1em 2%;
+}
+
+.list_orders li .dvfirst, .list_orders li .dvmid, .list_orders li .dvlast {
+    display: inline-block;
+    float: left;
+}
+
+.dvlast h4{
+    color: #fff;
+    font-style: normal;
+}
+
+.dvaz {
+    background-color: #308DFF;
+}
+
+.countdown span {
+    font-size: 26px;
+    margin-top: 20px;
+}
+
+.helve{
+    color: #000;
+    font-size: 2.6em;
+    font-family: 'HelveticaNeueLTStdLtRegular';  
+}
+
+.list_orders .ordersTable{
+    margin-top: -6px !important;
+    margin-bottom: 0px !important;
+    width: 1114px !important;
+    border: 0 !important;
+}
+
+.list_orders .ordersTable .hidden{
+    width: 1096px !important;
+}
+
+.list_orders .ordersTable .details{
+    width: 808px !important;
+}
+
+.submenuOrdersTable{
+    text-align: center;
+    margin: 0 !important;
+    /*border-bottom: 1px solid #ddd;*/
+    background-color: #6e6d72;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6d72), color-stop(100%, #4e4e50));
+    background-image: -webkit-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: -moz-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: -o-linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    background-image: linear-gradient(top, #6e6d72 0%,#4e4e50 100%);
+    -webkit-box-shadow: #6e6d72 0px 5px 12px;
+    -moz-box-shadow: #6e6d72 0px 5px 12px;
+    box-shadow: #6e6d72 0px 5px 12px;
+    
+}
+
+.submenuOrdersTable tr, .submenuOrdersTable  td {
+    border: 0;
+    /*background: #94C3FD;*/
+    cursor: pointer;
+    width:  12%;
+    /*border-left: 1px solid #ddd;*/
+    color: #fff;
+    
+}
+
+.submenuOrdersTable  td{
+    border-right: 1px solid #3a3a3a;
+}
+
+.submenuOrdersTable tr td:last-child{
+    border-right:0 !important;
+}
+
+.submenuOrdersTable  td:hover {
+    background: #ddd;
+    color: #000;
+}
+.submenuOrdersTable .selected{
+    background: #ddd;
+    font-weight: bold;
+    cursor: default;
+    
+}
+
+.submenuOrdersTable a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.submenuOrdersTable .selected a{
+    color: #000;
+}
+
+/* ===========================================================================
+   TrOrder Favorita en privado
+   ======================================================================== */
+.box_favorite_order {
+    width: 224px;
+    border: 1px solid #c7c7c7;
+    font-family: Arial,Helvetica,sans-serif;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+    background: #f2f2f2;
+    margin: 8.5px;
+    color: #3b393b;
+    float: left;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box_favorite_order .image_order {
+    border-bottom: 1px solid #c7c7c7;
+    height: 160px;
+}  
+
+.box_favorite_order .image_order .image {
+    width: 100%;
+}
+
+.box_favorite_order .title_multi {
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    height: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 2px #00556b;
+    padding: 0px 9px;
+    line-height: 28px;
+    background: #007ea7;
+    background: -moz-linear-gradient(top,#00a4cc 0%,#017296 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#00a4cc),color-stop(100%,#017296));
+    background: -webkit-linear-gradient(top,#00a4cc 0%,#017296 100%);
+    background: -o-linear-gradient(top,#00a4cc 0%,#017296 100%);
+    background: -ms-linear-gradient(top,#00a4cc 0%,#017296 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a4cc',endColorstr='#017296',GradientType=0 );
+    background: linear-gradient(top,#00a4cc 0%,#017296 100%);
+    width: auto;
+    position: relative;
+    z-index: 1;
+    margin-top: -3px;
+}
+
+.box_favorite_order .description_multi {
+    padding: 0px 9px 4px 0px;
+    line-height: 25px;
+    background: #E6E6E6;
+    background: -moz-linear-gradient(top,white 0%,#E6E6E6 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,white),color-stop(100%,#E6E6E6));
+    background: -webkit-linear-gradient(top,white 0%,#E6E6E6 100%);
+    background: -o-linear-gradient(top,white 0%,#E6E6E6 100%);
+    background: -ms-linear-gradient(top,white 0%,#E6E6E6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',endColorstr='#e6e6e6',GradientType=0 );
+    background: linear-gradient(top,white 0%,#E6E6E6 100%);
+    border-bottom: 1px solid white;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 10px 10px;
+    overflow: auto;
+    position: relative;
+    z-index: 2;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box_favorite_order .counter_multi {
+    color: #656565;
+    font-size: 11px;
+    margin-left: 8px;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+}
+
+.box_favorite_order .counter_multi span{
+    display: block; 
+    line-height: 18px
+}
+
+.box_favorite_order .prices_multi {
+    margin-top: 5px;
+    float: right;
+    width: 100%;
+}
+
+.box_favorite_order .counter_multi .time_left_multi {
+    display: block;
+    width: 100%;
+}
+
+.countdown_container_multi .time_left_text_multi {
+    display: none;
+}
+
+.box_favorite_order .prices_multi .current_bid {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007ea7;
+}
+
+.box_favorite_order .prices_multi .my_bid {
+    font-size: 14px;
+    padding: 0px 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box_favorite_order .prices_multi .to_bid {
+    text-align: center;
+    font-size: 14px;
+}
+
+.fright {
+    float: right!important;
+}
+
+/* ===========================================================================
+   Calendario
+   ======================================================================== */
+.calendario td{
+    padding: 1px !important;
+    border: none !important;
+}
+
+.calendario tr{
+    padding: 0px !important;
+    border: none !important;
+}
+
+#calSpanID{
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+/* ===========================================================================
+   Filtro
+   ======================================================================== */
+.filter_field{
+    float: left;
+    margin-bottom: 10px;
+}
+
+.filter_field p{
+    margin-bottom: 5px;
+}
+
+.filter_field input{
+    width: 100px !important;
+}
+
+.filter_field input[type="radio"]{
+    width: 20px !important;
+}
+
+.profile_client .filter_field select{
+    width: 195px !important;
+    margin: 0px;
+}
+
+.filter_field .strong{
+    margin-bottom: 0px;
+}
+
+.filter_field label{
+    width:40px !important;
+    text-align: left !important;
+    padding-left: 10px !important;
+    padding-right: 0px !important;
+}
+
+/* ===========================================================================
+   Nuevo encargo
+   ======================================================================== */
+.container_newTrOrder{
+    float: left;
+    width: 1140px;
+    margin-left: 22px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.container_newTrOrder h3{
+    border-bottom: #d5d5d5 1px solid;
+    width: 99%;
+}
+
+.form_message{
+    text-align: center;
+    color: #fff;
+}
+
+.addresses, .filter, .cannibalizedPart{
+    position: absolute;
+    z-index: 100;
+    display:none;
+    width: 686px;
+    min-height: 184px;
+    background: #fff;
+    border: 2px solid #ddd;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.cannibalizedPart{
+    width: 330px;
+}
+.filter{
+    width: 972px !important;
+}
+
+.order_data{
+    width:49%;
+    float:right;
+    padding:0px;
+    margin:0px;
+}
+
+.order_data label{
+    width: 256px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+.order_data textarea{
+    resize: none;
+}
+
+.order_data input[type="text"]{
+    min-width: 260px;
+}
+
+.order_data input[type="email"]{
+    min-width: 260px;
+}
+
+.order_data select{
+    width: 266px;
+    padding-right: 0px;
+}
+
+.order_data .radio label{
+    float: left;
+    margin-right: 30px;
+    width: auto;    
+    font-weight: normal;
+}
+
+.order_data .radio input{
+    float: left;
+    margin-right: 3px;  
+}
+
+.mandatory{
+    background: url('/eurotransportcar/web/bundles/trorder/images/forms/punto_rojo.gif') right center no-repeat;    
+}
+
+.new_order input[type="checkbox"],input[type="radio"] {
+    margin-top: 2px !important; 
+    margin-bottom: 6px !important;
+}
+
+.date_field{
+    min-width: 70px !important;
+    width: 70px !important;
+}
+
+.date_field_datetime{
+    min-width: 100px !important;
+    width: 100px !important;
+}
+
+.delete_attachment{
+    background: url('/eurotransportcar/web/bundles/trorder/images/delete.png') no-repeat center left;   
+}
+
+/* ===========================================================================
+   Nuevo encargo - Zonas Dañadas
+   ======================================================================== */
+.order_data .damAreas{
+    margin-left:auto; 
+    margin-right:auto;
+    width: 410px;
+    height: 267px;
+    border: 1px #bbb solid;
+    padding: 3px;
+}
+
+.damAreas .title {
+    width: 100%; 
+    text-align: center; 
+    font-weight: bold; 
+    border-bottom: 1px solid #ddd;
+    padding: 2px;
+}
+
+.damAreas .leftCheck{
+    height: 20px;
+    float: left;
+    margin-right: 180px;
+    margin-left: 6px;    
+}
+
+.damAreas .centerCheck{
+    height: 20px;
+    float: left;
+    margin-right: 177px;
+}
+
+.damAreas .rightCheck{
+    height: 20px;
+    float: left;
+}
+
+.damAreas .checkBackArea{
+    height: 120px; 
+    padding-top: 60px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 6px;   
+}
+
+.damAreas .checkFrontalArea{
+    height: 120px; 
+    padding-top: 60px;
+    float: left;
+}
+
+#img_damagedAreas{
+     width: 352px; 
+     height: 144px; 
+     border: 1px solid #bbb; 
+     float: left; 
+     margin-right: 7px; 
+     margin-top: -4px;
+}
+
+.damAreas .imgTourism {
+    margin-left: auto; 
+    margin-right: auto;
+    background-image: url("../images/img_vehicles.gif"); 
+    background-position: top center;
+}
+
+.damAreas .imgMoto {
+    background-image: url("../images/img_vehicles.gif"); 
+    background-position: top left;
+}
+
+.damAreas .imgTruck {
+    background-image: url("../images/img_vehicles.gif"); 
+    background-position: top right;
+}
+
+.damAreas .bottomCheckArea{
+    width: 24%;
+    float: left;
+}
+
+.damAreas .bottomCheckArea input{
+    float: left;
+    margin-right: 3px;
+}
+
+/* ===========================================================================
+   Formulario de acceso
+   ======================================================================== */
+.access{
+    width: 350px;
+    padding-top: 10px;
+}
+
+.access .fields label{
+    float: left;
+    text-align: right;
+    padding-right: 40px;
+    padding-top: 6px;
+    width: 80px;
+}
+
+.access .fields input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 204px;
+    float: right;
+}
+
+.access .primary_button{
+    margin-right: 7px;
+}
+
+.access .fields .session{
+    float: right;
+    margin-right: 18px;
+    
+    width: 100%;
+    text-align: right;
+}
+
+/*.access .fields .session input{
+    text-align: right;
+    width: auto;
+    float: left;
+}
+
+.access .fields .session label{
+    text-align: right;
+    width: auto;
+}*/
+
+/* ===========================================================================
+   Registro de proveedor
+   ======================================================================== */
+.register_provider .fields .left{
+    float: left;
+    width: 49%;
+}
+
+.register_provider .fields .right{
+    float: right;
+    width: 49%;
+}
+
+.register_provider .fields .left input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 340px !important;*/
+}
+
+.register_provider .fields .right input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 340px;*/
+}
+
+.register_provider .fields .left select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 348px !important;*/
+}
+
+.register_provider .fields .right select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 348px !important;*/
+}
+
+.register_provider{
+    width: 430px;
+    padding-top: 10px;
+}
+
+.register_provider .fields{
+    float: left;
+}
+
+.register_provider .fields div{
+    float: left;
+    width: 100%;
+}
+
+.register_provider .fields label{
+    float: left;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 6px;
+}
+
+.register_provider .fields input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 242px !important;*/
+}
+
+.register_provider select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    /*width: 250px !important;*/
+}
+
+.register_provider .primary_button{
+    margin-right: 7px;
+}
+
+.provider_vhType{
+    margin-left: 165px;
+}
+
+.provider_vhType input[type="checkbox"]{
+    margin-top: 8px !important;
+    width: 30px !important;
+    float: left !important;
+} 
+
+.provider_vhType label{
+    width: 210px;
+    text-align: left !important;
+}
+
+.preview{
+    height: 75px;
+    border: 1px solid #ccc;
+    margin: 0px;
+    float: left;
+    margin-left: 217px;
+}
+
+/* ===========================================================================
+   Registro de cliente y Cuenta de usuario
+   ======================================================================== */
+.account_container{
+    float: left; 
+    width: 90%;
+    margin-left: 5%; 
+}
+
+.account_sidebar{
+    float: left;
+    width: 206px;
+}
+
+.account_right{
+    float: left;
+    width: 76%;
+    margin-left: 15px;
+}
+
+.account_text{
+    padding: 0 2px;
+    margin-bottom: 20px;
+    color: #404040;
+}
+
+.account_right h3{
+    margin: 0.2em 0;
+}
+
+.box46per {
+    float: left; 
+    width: 46%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.box46per p{
+    color: #404040;
+    margin-bottom: 0px;
+}
+
+.box46per .red p{
+    color: red;
+    margin-bottom: 0px; 
+}
+
+.box46per .second_button{
+    padding: 5px 10px !important;
+}
+
+.legend {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    overflow: hidden;
+    color: #404040;
+}
+
+.modify_right {
+    width: 100%;
+    text-align: right;
+}
+
+.profile_client .fields .left{
+    float: left;
+    width: 49%;
+}
+
+.profile_client .fields .right{
+    float: right;
+    width: 49%;
+}
+
+.profile_client .fields .left input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 340px;
+}
+
+.profile_client .fields .right input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 340px;
+}
+
+.profile_client .fields .left select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 348px;
+}
+
+.profile_client .fields .right select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 348px;
+}
+
+.profile_client{
+    width: 430px;
+    padding-top: 10px;
+}
+
+.profile_client .fields{
+    float: left;
+}
+
+.profile_client .fields div{
+    float: left;
+    width: 100%;
+}
+
+.profile_client .fields label{
+    float: left;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 6px;
+}
+
+.profile_client .fields input{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 292px !important;    /*242*/
+}
+
+.profile_client .fields input[type="checkbox"]{
+    margin-top: 9px;
+}
+
+.profile_client .fields textarea{
+    padding: 2px;
+    margin: 2px;
+    width: 475px;
+    height: 100px;
+}
+
+.profile_client select{
+    padding: 2px;
+    margin: 2px;
+    margin-bottom: 5px;
+    width: 300px !important;    /*250px*/
+}
+
+.profile_client .primary_button{
+    margin-right: 27px;
+    margin-top: 15px;
+}
+
+.profile_client .second_button{
+    margin-left: 27px;
+    margin-top: 15px;
+}
+
+.flash-profile{
+   /* width: 450px;   
+    margin: 0px;
+    margin-left: 2px;
+    margin-bottom: 10px;*/
+   margin-bottom: 8px;
+   width: 100%;
+}
+
+.flash-identification{
+    width: 370px;
+    margin: 0px;
+    margin-left: 2px;
+}
+
+/* ===========================================================================
+   Estilos generales
+   ======================================================================== */
+.w12{ width: 12% !important;}
+.w15{ width: 15% !important;}
+.w18{ width: 18% !important;}
+.w21{ width: 21% !important;}
+.w23{ width: 23% !important;}
+.w25{ width: 25% !important;}
+.w30{ width: 30% !important;}
+.w31{ width: 31% !important;}
+.w33{ width: 33% !important;}
+.w40{ width: 40% !important;}
+.w45{ width: 45% !important;}
+.w46{ width: 46% !important;}
+.w47{ width: 47% !important;}
+.w48{ width: 48% !important;}
+.w49{ width: 49% !important;}
+.w50{ width: 50% !important;}
+.w51{ width: 51% !important;}
+.w60{ width: 60% !important;}
+.w70{ width: 70% !important;}
+.w80{ width: 80% !important;}
+.w90{ width: 90% !important;}
+.w93{ width: 93% !important;}
+.w95{ width: 95% !important;}
+.w96{ width: 96% !important;}
+.w97{ width: 97% !important;}
+.w98{ width: 98% !important;}
+.w99{ width: 99% !important;}
+.w100{ width: 100% !important;}
+.w10px{ width: 10px !important;}
+.w15px{ width: 15px !important;}
+.w20px{ width: 20px !important;}
+.w25px{ width: 25px !important;}
+.w35px{ width: 35px !important;}
+.w50px{ width: 50px !important;}
+.w60px{ width: 60px !important;}
+.w64px{ width: 64px !important;}
+.w70px{ width: 70px !important;}
+.w80px{ width: 80px !important;}
+.w90px{ width: 90px !important;}
+.w100px{ width: 100px !important;}
+.w113px{ width: 113px !important;}
+.w120px{ width: 120px !important;}
+.w135px{ width: 135px !important;}
+.w150px{ width: 150px !important;}
+.w160px{ width: 160px !important;}
+.w170px{ width: 170px !important;}
+.w178px{ width: 178px !important;}
+.w182px{ width: 182px !important;}
+.w192px{ width: 192px !important;}
+.w197px{ width: 197px !important;}
+.w200px{ width: 200px !important;}
+.w206px{ width: 206px !important;}
+.w210px{ width: 210px !important;}
+.w220px{ width: 220px !important;}
+.w250px{ width: 250px !important;}
+.w260px{ width: 260px !important;}
+.w270px{ width: 270px !important;}
+.w278px{ width: 278px !important;}
+.w332px{ width: 332px !important;}
+.w334px{ width: 334px !important;}
+.w340px{ width: 340px !important;}
+.w348px{ width: 348px !important;}
+.w352px{ width: 352px !important;}
+.w371px{ width: 371px !important;}
+.w488px{ width: 488px !important;}
+.w499px{ width: 499px !important;}
+.w519px{ width: 519px !important;}
+.w520px{ width: 520px !important;}
+.w559px{ width: 559px !important;}
+.w750px{ width: 750px !important;}
+.w860px{ width: 860px !important;}
+.w875px{ width: 875px !important;}
+.w928px{ width: 928px !important;}
+.w948px{ width: 948px !important;}
+.w1166px{ width: 1166px !important;}
+.wAuto{ width: auto !important;}
+.mw1000px{ max-width: 1000px !important;}
+
+.h22px{ height: 22px !important;}
+.h30px{ height: 30px !important;}
+.h86px{ height: 86px !important;}
+.h134px{ height: 134px !important;}
+.h200px{ height: 200px !important;}
+.h220px{ height: 220px !important;}
+.h225px{ height: 225px !important;}
+.h246px{ height: 246px !important;}
+
+.left{ float: left !important;}
+.right{ float: right !important;}
+
+.ta_right{ text-align: right !important;}
+.ta_left{ text-align: left !important;}
+.ta_center{ text-align: center !important;}
+.mauto{ margin-left: auto; margin-right: auto;}
+
+.ml15per {margin-left: 15% !important;}
+.ml75per {margin-left: 75% !important;}
+.mr15per {margin-right: 15% !important;}
+
+.m0{ margin: 0px !important;}
+.m2{ margin: 2px !important;}
+.m10{ margin: 10px !important;}
+.mr0{ margin-right: 0px !important;}
+.mt0{ margin-top: 0px !important;}
+.mt1{ margin-top: 1px !important;}
+.mt2{ margin-top: 2px !important;}
+.mt3{ margin-top: 3px !important;}
+.mt4{ margin-top: 4px !important;}
+.mt5{ margin-top: 5px !important;}
+.mt6{ margin-top: 6px !important;}
+.mt7{ margin-top: 7px !important;}
+.mt10{ margin-top: 10px !important;}
+.mt20{ margin-top: 20px !important;}mt
+.mt21{ margin-top: 21px !important;}
+.mt30{ margin-top: 30px !important;}
+.mt190{ margin-top: 190px !important;}
+.mt-5{ margin-top: -5px !important;}
+.mrAuto{ margin-right: auto !important;}
+.mr2{ margin-right: 2px !important;}
+.mr3{ margin-right: 3px !important;}
+.mr5{ margin-right: 5px !important;}
+.mr6{ margin-right: 6px !important;}
+.mr8{ margin-right: 8px !important;}
+.mr10{ margin-right: 10px !important;}
+.mr11{ margin-right: 11px !important;}
+.mr13{ margin-right: 13px !important;}
+.mr14{ margin-right: 14px !important;}
+.mr20{ margin-right: 20px !important;}
+.mr22{ margin-right: 22px !important;}
+.mr30{ margin-right: 30px !important;}
+.mr37{ margin-right: 37px !important;}
+.mr39{ margin-right: 39px !important;}
+.mr40{ margin-right: 40px !important;}
+.mr50{ margin-right: 50px !important;}
+.mr60{ margin-right: 60px !important;}
+.mr79{ margin-right: 79px !important;}
+.mr90{ margin-right: 90px !important;}
+.mb0{ margin-bottom: 0px !important;}
+.mb1{ margin-bottom: 1px !important;}
+.mb2{ margin-bottom: 2px !important;}
+.mb3{ margin-bottom: 3px !important;}
+.mb4{ margin-bottom: 4px !important;}
+.mb5{ margin-bottom: 5px !important;}
+.mb8{ margin-bottom: 8px !important;}
+.mb10{ margin-bottom: 10px !important;}
+.mb15{ margin-bottom: 15px !important;}
+.mb20{ margin-bottom: 20px !important;}
+.mb50{ margin-bottom: 50px !important;}
+.mb57{ margin-bottom: 57px !important;}
+.mb62{ margin-bottom: 62px !important;}
+.mb360{ margin-bottom: 360px !important;}
+.mlAuto{ margin-left: auto !important;}
+.ml0{ margin-left: 0px !important;}
+.ml1{ margin-left: 1px !important;}
+.ml2{ margin-left: 2px !important;}
+.ml5{ margin-left: 5px !important;}
+.ml6{ margin-left: 6px !important;}
+.ml8{ margin-left: 8px !important;}
+.ml10{ margin-left: 10px !important;}
+.ml18{ margin-left: 18px !important;}
+.ml20{ margin-left: 20px !important;}
+.ml22{ margin-left: 22px !important;}
+.ml27{ margin-left: 27px !important;}
+.ml30{ margin-left: 30px !important;}
+.ml32{ margin-left: 32px !important;}
+.ml42{ margin-left: 42px !important;}
+.ml45{ margin-left: 45px !important;}
+.ml56{ margin-left: 56px !important;}
+.ml120{ margin-left: 120px !important;}
+.ml155{ margin-left: 155px !important;}
+.ml213{ margin-left: 213px !important;}
+.ml214{ margin-left: 214px !important;}
+.ml217{ margin-left: 217px !important;}
+.ml220{ margin-left: 220px !important;}
+.ml256{ margin-left: 256px !important;}
+.ml-18{ margin-left: -18px !important;}
+
+.p0{ padding: 0px !important;}
+.p2{ padding: 2px !important;}
+.p3{ padding: 3px !important;}
+.p10{ padding: 10px !important;}
+.p25{ padding: 25px !important;}
+.pt0{ padding-top: 0px !important;}
+.pt1{ padding-top: 1px !important;}
+.pt2{ padding-top: 2px !important;}
+.pt5{ padding-top: 5px !important;}
+.pt20{ padding-top: 20px !important;}
+.pr10{ padding-right: 10px !important;}
+.pr22{ padding-right: 22px !important;}
+.pb0{ padding-bottom: 0px !important;}
+.pb3{ padding-bottom: 3px !important;}
+.pb5{ padding-bottom: 5px !important;}
+.pb10{ padding-bottom: 10px !important;}
+.pb17{ padding-bottom: 17px !important;}
+.pb90{ padding-bottom: 90px !important;}
+.pl2{ padding-left: 2px !important;}
+.pl5{ padding-left: 5px !important;}
+.pl10{ padding-left: 10px !important;}
+.pl17{ padding-left: 17px !important;}
+.pl20{ padding-left: 20px !important;}
+.pl22{ padding-left: 22px !important;}
+.pl50{ padding-left: 50px !important;}
+.pl38{ padding-left: 38px !important;}
+.pl90{ padding-left: 90px !important;}
+.pl120{ padding-left: 120px !important;}
+
+.minw80{ min-width: 80px !important;}
+.minw216{ min-width: 216px !important;}
+.minw258{ min-width: 258px !important;}
+.minw340{ min-width: 340px !important;}
+.minh86{ min-height: 86px !important;}
+.minh100{ min-height: 100px !important;}
+.minh104{ min-height: 104px !important;}
+.minh120{ min-height: 120px !important;}
+.minh130{ min-height: 130px !important;}
+.minh150{ min-height: 150px !important;}
+.minh160{ min-height: 160px !important;}
+.minh165{ min-height: 165px !important;}
+.minh200{ min-height: 200px !important;}
+.hmin100px{ min-height: 100px !important;}
+
+.hand{ cursor: pointer;}
+
+.italic{ font-style: italic; }
+.bold{ font-weight: bold;}
+.underline{ text-decoration: underline;}
+.no_underline{ text-decoration: none !important;}
+.noresize{resize: none;}
+
+.fsize8{ font-size: 8px;}
+.fsize11{ font-size: 11px;}
+
+.talign_center{
+    text-align: center;
+}
+
+.no_border{border: none !important;}
+.border_top{ border-top: 1px solid #d5d5d5;}
+.border_top2{ 
+    border: none;
+    border-top: 1px solid #d5d5d5;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.border_right{border-right:1px solid #d5d5d5;}
+.border_left{border-left:1px solid #d5d5d5;}
+.border_bottom{border-bottom: 1px solid #d5d5d5;}
+
+.no_shadow{
+    box-shadow: none;
+}
+
+.color666{ color: #666 !important;}
+.blue{ color: blue !important;}
+
+.fields input[readonly="readonly"] {
+    background-color: #E8E8E8;
+}
+
+.bg_color_blue{ background-color: #308DFF; }
+.bg_color_red{ background-color: #C00; }
+
+.red{ color:red;}
+
+/* Mensajes de información*/
+.info_mandatory{
+    background: url('/eurotransportcar/web/bundles/trorder/images/forms/punto_rojo.gif') left top no-repeat; 
+}
+
+.info_mandatory p{
+    margin-left: 13px;
+    font-size: 10.5px;
+}
+
+/* Campos obligatorios para informe de estado */
+.mandatory_report{
+    background: url('/eurotransportcar/web/bundles/trorder/images/forms/punto_rojo.gif') right center no-repeat;
+}
+
+
+/* Símbolo del euro */
+.euro{
+    margin-left: 2px;
+    margin-top: 5px;
+    float: left;
+    width: 20px;
+}
+
+/* Errores generales, con fondo rojo y letra blanca */
+.errors{
+    color: #404040;
+    background: #f5b0a3;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.errors ul li{
+    margin-top: 1px !important;
+}
+
+.success{
+    color: #404040;
+    background: #eff5ea;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.errors ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Errores en campos de formulario, sin fondo y letra roja */
+.error_field ul{
+    background: none !important;
+    margin: 0px !important;
+    margin-bottom: -6px !important;
+    margin-right: 3px !important;
+    margin-top: -4px !important;
+    padding: 0px !important;
+}
+
+.error_field ul li{
+    list-style: none !important;  
+    color: red !important;
+    text-align: left; 
+    background: none !important;
+    margin: 0px !important;
+    margin-left: 170px !important;
+}
+
+/* Errores en campos de formulario Nuevo Transporte, sin fondo y letra roja */
+.error_field_order ul{    
+    float: left;
+    padding: 0px;
+    width: 100%;
+    background: none !important;
+    margin: 0px !important;
+    margin-bottom: -6px !important;
+    margin-right: 3px !important;
+    margin-top: -4px !important;
+    padding: 0px !important;
+    margin-top: 2px;
+}
+
+.error_field_order ul li{
+    list-style: none !important;  
+    color: red !important;
+    text-align: left; 
+    background: none !important;
+    margin: 0px !important;
+    margin-bottom: 1px !important;
+    margin-left: 255px !important;
+}
+
+.path{
+    width: 100%;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.path span{
+    font-size: 12px;
+    color: #aaa;
+}
+
+.title{
+    width: 100%;
+    border-bottom: 1px #ddd solid;
+    margin-bottom: 15px;
+}
+
+.title h1{
+    margin-bottom: 2px;
+}
+
+.bgcolor-green{ background-color: #090;}
+
+.z_index0{
+    z-index: 0;
+    position: absolute;
+}
+
+.z_index1{
+    z-index: 1;
+    position: absolute;
+}
+
+.z_index5{
+    z-index: 5;
+    position: absolute;
+}
+
+
+/* ===========================================================================
+   Mapa
+   ======================================================================== */
+
+.marcomapa {
+	z-index: 0; 
+	background: url(../images/map/gmap.png) 0px 0px no-repeat;
+	float: left; 
+	width:350px; 
+	height:270px;
+	border:0px;
+	margin: 0px 22px 2px 22px;
+        border-top: 1px solid #ccc;
+	/*position:absolute;*/
+}
+
+.mapa {
+	position:absolute;
+	border:0px;
+	margin:0px;
+	width:350px; 
+	height:270px;
+	z-index:2;
+}
+
+.areaseleccionadamapa {
+	position:absolute;
+	z-index:1;
+	display:block;
+}
+
+.areanomapa {
+	position:absolute;
+	z-index:-1;
+	display:none;
+}
+
+.menu_filters {
+    float: left;
+    width: 946px;
+    padding: 5px 10px;
+    border: 2px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.menu_filters .active{
+    font-weight: bold;
+}
+
+/* ===========================================================================
+   Menu para Ordenar por:
+   ======================================================================== */
+
+.sortby_menu {  
+    text-align: center;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 6;
+}
+.sortby_menu ul { 
+    list-style-type: none;
+    margin-left: 0em;
+    padding-left: 0em;
+    margin-top: 0;
+}
+.sortby_menu ul li.nivel1 { 
+    float: left;
+    width: 162px;
+    margin-top: 0;
+    background-color: #fff;
+    border-color: #C2C2C2 #e2e2e2;
+    border-style: solid;
+    border-width: 1px;
+    background: url(../images/triangle_down.png) right no-repeat;
+    
+}
+
+.sortby_menu ul li ul li {
+    margin-top: 0;
+}
+.sortby_menu ul li a {display: block;
+text-decoration: none;
+color: #404040;
+background-color: #fff;
+
+padding: 3px;
+position: relative;
+}
+.sortby_menu ul li:hover {position: relative;
+}
+.sortby_menu ul li a:hover, .sortby_menu ul li:hover a.nivel1 {background-color: #ddd;
+color: #000;
+position: relative;
+}
+.sortby_menu ul li a.nivel1 {
+    display: block!important;
+    display: none;
+    position: relative;
+    background-color: transparent !important;
+}
+.sortby_menu ul li ul {
+    display: none;
+    border: 1px solid #ddd;
+}
+.sortby_menu ul li a:hover ul, .sortby_menu ul li:hover ul {display: block;
+position: absolute;left: 0px;
+}
+.sortby_menu ul li ul li a {width: 160px;
+padding: 3px 0px 3px 0px;
+}
+.sortby_menu ul li ul li a:hover {
+position: relative;
+}
+table.falsa {border-collapse:collapse;
+border:0px;
+float: left;
+position: relative;
+}

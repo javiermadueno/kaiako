@@ -1,16 +1,16 @@
-backend:
-    resource: "@BackendBundle/Resources/config/routing.yml"
-    prefix:   /
-
 ad:
     resource: "@AdBundle/Resources/config/routing.yml"
     prefix:   /
 
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /user/
+    
 static:
     resource: "@StaticBundle/Resources/config/routing.yml"
     prefix:   /
-
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+    
+index:
+    pattern: /
+    defaults: { _controller: StaticBundle:Default:index }
 

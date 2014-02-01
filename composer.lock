@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3694f5a67c2c0f5a0980f60a108d26b7",
+    "hash": "2c0295f7b959d7cc894ee1a78d4f3b41",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -43,7 +43,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -185,7 +185,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -948,27 +948,35 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v2.3.4",
+            "version": "v3.0.0",
             "target-dir": "Sensio/Bundle/FrameworkExtraBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "cce05719041d952bbec856789ca18646a1891d03"
+                "reference": "2016a90bd032248e7d6e9da29def4959821127c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/cce05719041d952bbec856789ca18646a1891d03",
-                "reference": "cce05719041d952bbec856789ca18646a1891d03",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/2016a90bd032248e7d6e9da29def4959821127c8",
+                "reference": "2016a90bd032248e7d6e9da29def4959821127c8",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.2",
-                "symfony/framework-bundle": "~2.2"
+                "symfony/framework-bundle": "~2.4"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~2.4",
+                "symfony/security-bundle": "~2.4"
+            },
+            "suggest": {
+                "symfony/expression-language": "",
+                "symfony/security-bundle": ""
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -991,7 +999,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2013-07-24 08:49:53"
+            "time": "2013-12-03 07:53:39"
         },
         {
             "name": "sensio/generator-bundle",
@@ -1155,20 +1163,21 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.0.0",
+            "version": "v1.2.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783"
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
-                "reference": "cac3fdfb111adbe590155f491594636d45129783",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
                 "shasum": ""
             },
             "require": {
+                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1198,7 +1207,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:07"
+            "time": "2013-06-03 18:32:58"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1531,7 +1540,7 @@
     "aliases": [
 
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "stability-flags": [
 
     ],

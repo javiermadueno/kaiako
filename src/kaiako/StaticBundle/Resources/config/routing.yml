@@ -1,3 +1,8 @@
 static_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: StaticBundle:Default:index }
+    
+# Ruta para mostrar el formulario de contacto
+contact:
+    pattern:  /contact
+    defaults: { _controller: StaticBundle:Default:contact}

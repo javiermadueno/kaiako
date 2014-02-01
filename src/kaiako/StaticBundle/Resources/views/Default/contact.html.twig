@@ -1,0 +1,60 @@
+{% extends '::frontend.html.twig' %}
+
+{% block title %}Contacta con nosotros{% endblock %}
+{% block id 'contact' %}
+
+{% block article %}
+    <div class="flash-profile left w80 mb0 ml120">
+        {% for message in app.session.flashbag.get('info') %}
+            <p class="flash-info"><span class="success_icon"></span>{{ message }}</p>
+        {% endfor %}  
+    </div>
+    <div class="register_container contact_container" style="padding-bottom: 20px;">
+        <div class="reg_desc" style="top:10px;">
+            <h1>{{ block('title') }}</h1> 
+            <p class="reg_subtitle">Si está interesado en que Eurotransportcar le asesore, envíenos el siguiente formulario de solicitud explicándonos sus necesidades.</p>
+            <div>
+                {% if form_errors(form) | length > 0 %}
+                    <div class="errors mr10 ml2">
+                        <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
+                    </div>
+                {% endif %}
+                
+                <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+                    <fieldset class="profile p25">  
+                        <div class="fields">
+                            
+                            <div class="order_data left w100">
+                                <div class="error_field">
+                                    {{ form_errors(form.name)  }}
+                                </div> 
+                                {{ form_label(form.name, label|default(null), { 'label_attr': { 'class': 'mandatory w135px' } }) }}
+                                {{ form_widget(form.name, {'attr':{'class': 'minw258'}}) }}  
+                            </div>
+                            
+                            <div class="order_data left w100">
+                                <div class="error_field">
+                                    {{ form_errors(form.sender)  }}
+                                </div>
+                                {{ form_label(form.sender, label|default(null), { 'label_attr': { 'class': 'mandatory w135px' } }) }}
+                                {{ form_widget(form.sender, {'attr':{'class': 'minw258'}}) }}
+                            </div>
+                            <div class="order_data left w100">
+                                {{ form_label(form.message, label|default(null), { 'label_attr': { 'class': 'mandatory w135px' } }) }}
+                                {{ form_widget(form.message, {'attr':{'class': 'w260px hmin100px noresize'}}) }}
+                            </div>
+                             
+                            <div class="hidden">
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                        <div class="right mt20">
+                            <input class="primary_button" type="submit" value="Enviar" />
+                        </div>
+                    </fieldset>    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

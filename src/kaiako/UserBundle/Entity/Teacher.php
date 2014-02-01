@@ -57,7 +57,12 @@ class Teacher implements UserInterface
     /** @ORM\Column(type="string", length=100) 
      *  @Assert\NotBlank(message = "Por favor, indica un nombre")
      */
-    protected $name;  
+    protected $name; 
+    
+    /** @ORM\Column(type="string", length=100) 
+     *  @Assert\NotBlank(message = "Por favor, indica tus apellidos")
+     */
+    protected $surnames;
     
     /** @ORM\Column(type="string") 
      *  @Assert\NotBlank(message = "Por favor, indica un número de teléfono")
@@ -126,7 +131,7 @@ class Teacher implements UserInterface
     {
         $this->date = new \DateTime();
         $this->ads = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->languages = new \Doctrine\Comon\Collections\ArrayCollection();
+        $this->languages = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     function eraseCredentials()
@@ -540,4 +545,97 @@ class Teacher implements UserInterface
     {
         return $this->languages;
     }
+
+    /**
+     * Set surnames
+     *
+     * @param string $surnames
+     * @return Teacher
+     */
+    public function setSurnames($surnames)
+    {
+        $this->surnames = $surnames;
+
+        return $this;
+    }
+    
+    /**
+     * Get surnames
+     *
+     * @return string 
+     */
+    public function getSurnames()
+    {
+        return $this->surnames;
+    }
+
+    /**
+     * Get zipcode
+     *
+     * @return string 
+     */
+    public function getZipcode()
+    {
+        return $this->zipcode;
+    }
+    
+    /**
+     * Set zipcode
+     *
+     * @param string $zipcode
+     * @return Teacher
+     */
+    public function setZipcode($zipcode)
+    {
+        $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get town
+     *
+     * @return string 
+     */
+    public function getTown()
+    {
+        return $this->town;
+    }
+    
+    /**
+     * Set town
+     *
+     * @param string $town
+     * @return Teacher
+     */
+    public function setTown($town)
+    {
+        $this->town = $town;
+
+        return $this;
+    }
+    
+    /**
+     * Get province
+     *
+     * @return string 
+     */
+    public function getProvince()
+    {
+        return $this->province;
+    }
+    
+    /**
+     * Set province
+     *
+     * @param string $province
+     * @return Teacher
+     */
+    public function setProvince($province)
+    {
+        $this->province = $province;
+
+        return $this;
+    }
+    
 }

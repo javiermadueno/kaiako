@@ -1,1 +1,21 @@
-Hello {{ name }}!
+{% extends '::frontend.html.twig' %}
+
+{% block article %}
+<div class="hero">
+		<div class="register">
+			<div class="brand"></div>
+			<form action="">
+				<input type="text" id="nombre", name="nombre" placeholder="Nombre">
+				<input type="text" id="email" name="email" placeholder="Email">
+				<input type="text" id="password" name="password" placeholder="Contraseña">
+				<input type="text" id="password-rep" name="password-rep" placeholder="Repita la contraseña">
+				<label for="condiciones"><input type="checkbox" name="condiciones" id="condiciones">Acepto las condiciones legales</label>
+				<a href="" class="boton boton-submit">SIGN UP</a>
+			</form>
+			<a href="#" class="boton boton-login">¿Ya tienes cuenta? Ingres ahora</a>
+
+
+		</div>
+	</div>
+        
+{% endblock %}
