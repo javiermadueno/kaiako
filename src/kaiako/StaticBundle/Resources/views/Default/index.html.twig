@@ -2,20 +2,92 @@
 
 {% block article %}
 <div class="hero">
-		<div class="register">
-			<div class="brand"></div>
-			<form action="">
-				<input type="text" id="nombre" name="nombre" placeholder="Nombre">
-				<input type="text" id="email" name="email" placeholder="Email">
-				<input type="text" id="password" name="password" placeholder="Contraseña">
-				<input type="text" id="password-rep" name="password-rep" placeholder="Repita la contraseña">
-				<label for="condiciones"><input type="checkbox" name="condiciones" id="condiciones">Acepto las condiciones legales</label>
-				<a href="" class="boton boton-submit">SIGN UP</a>
-			</form>
-			<a href="#" class="boton boton-login">¿Ya tienes cuenta? Ingres ahora</a>
+    <div class="portada">
+        <h2>Si sabes que quieres aprender <br> Encuentra quien quieres que te enseñe</h2>
+        <form action="{{path('filter_ads')}}" method="post">
+            <select name="deporte" id="deporte">
+                {%for categorie in categories%}
+                <option value="{{categorie.id}}">{{categorie.name}}</option>
+                {%endfor%}
+            </select>
+            <select name="ciudad" id="ciudad">
+                 {%for province in provinces%}
+                <option value="{{province.id}}">{{province.name}}</option>
+                {%endfor%}
+            </select>
 
+            <input type="text" id="datepicker_in">
+            <input type="text" id="datepicker_out">
 
-		</div>
-	</div>
-        
+            <select name="hour_in" id="hour_in">
+                <option value="" selected>Desde</option>
+                <option value="">00:00</option>
+                <option value="">1:00</option>
+                <option value="">2:00</option>
+                <option value="">3:00</option>
+                <option value="">4:00</option>
+                <option value="">5:00</option>
+                <option value="">6:00</option>
+                <option value="">7:00</option>
+                <option value="">8:00</option>
+                <option value="">9:00</option>
+                <option value="">10:00</option>
+                <option value="">11:00</option>
+                <option value="">12:00</option>
+                <option value="">13:00</option>
+                <option value="">14:00</option>
+                <option value="">15:00</option>
+                <option value="">16:00</option>
+                <option value="">17:00</option>
+                <option value="">18:00</option>
+                <option value="">19:00</option>
+                <option value="">20:00</option>
+                <option value="">21:00</option>
+                <option value="">22:00</option>
+                <option value="">23:00</option>
+            </select>
+            <select name="hour_out" id="hour_out">
+                <option value="" selected>Hasta</option>
+                <option value="">00:00</option>
+                <option value="">1:00</option>
+                <option value="">2:00</option>
+                <option value="">3:00</option>
+                <option value="">4:00</option>
+                <option value="">5:00</option>
+                <option value="">6:00</option>
+                <option value="">7:00</option>
+                <option value="">8:00</option>
+                <option value="">9:00</option>
+                <option value="">10:00</option>
+                <option value="">11:00</option>
+                <option value="">12:00</option>
+                <option value="">13:00</option>
+                <option value="">14:00</option>
+                <option value="">15:00</option>
+                <option value="">16:00</option>
+                <option value="">17:00</option>
+                <option value="">18:00</option>
+                <option value="">19:00</option>
+                <option value="">20:00</option>
+                <option value="">21:00</option>
+                <option value="">22:00</option>
+                <option value="">23:00</option>
+            </select>
+            <input type="submit" class="boton boton-submit" value="Buscar">
+        </form>
+    </div>
+</div>
+<script>
+    $(function() {
+        $("#datepicker_in").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true
+        });
+        $("#datepicker_out").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true
+        });
+    });
+</script>
+
 {% endblock %}

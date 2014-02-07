@@ -1,4 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
+.navbar{
+    margin-bottom: 0;
+}
+
+.navbar-inner{
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
 .hero{
 	overflow:hidden;
 	width:100%;
@@ -8,10 +18,17 @@
 	background-size: cover;
 }
 
+.hero .portada{
+    position:relative;
+}
+
+.portada h2{
+    color:white;
+}
+
 .hero .register{
 	position:relative;
 	top:50%;
-
 	left:50%;
 	box-sizing: border-box;
 	margin: -300px -225px;
@@ -77,7 +94,7 @@ input:-ms-input-placeholder {
 
 .boton{
 	display: block;
-	width: 100%;
+	width: 100% !important;
 	height: 75px;
 	font-size: 20px;
 	padding:27px 20px;
@@ -88,6 +105,7 @@ input:-ms-input-placeholder {
 	transition: all 0.5;
 	-webit-transition: all 0.5;
 	-moz-transition: all 0.5;
+        border:none;
 }
 
 .boton.boton-submit{

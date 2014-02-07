@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Symfony/src/kaiako/UserBundle/Resources/views/Default/register_teacher.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Symfony/src/kaiako/StaticBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Symfony/src/kaiako/UserBundle/Form/Frontend/TeacherType.php</file>
+            <file>file:/Applications/MAMP/htdocs/kaiako/src/kaiako/StaticBundle/Resources/public/css/estilos.css</file>
+            <file>file:/Applications/MAMP/htdocs/kaiako/src/kaiako/StaticBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/Applications/MAMP/htdocs/kaiako/app/Resources/views/frontend.html.twig</file>
+            <file>file:/Applications/MAMP/htdocs/kaiako/app/Resources/views/base.html.twig</file>
         </group>
     </open-files>
 </project-private>
