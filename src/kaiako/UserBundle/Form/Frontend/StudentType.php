@@ -20,6 +20,10 @@ class StudentType extends AbstractType
                                             'first_options'     => array('label' => 'Contraseña'),
                                             'second_options'    => array('label' => 'Repita contraseña')
                                             ))
+        ->add('name', 'text', array('label'    => 'Nombre',
+                                         'required' => false))
+        ->add('surnames', 'text', array('label'    => 'Apellidos',
+                                         'required' => false))
         ->add('companyName','text',array('required' => false,
                                          'label'    => 'Nombre de la Empresa'))
         ->add('nifCif', 'text', array('required'    => false,
@@ -31,15 +35,6 @@ class StudentType extends AbstractType
         ->add('mobile', 'text', array('required'    => false,
                                       'label'       => 'Móvil',
                                       'attr'        => array('maxlength' => 14)))
-        ->add('zipcode', 'text', array('required'   => false,
-                                       'label'      => 'Código Postal',
-                                       'attr'       => array('maxlength' => 5))) 
-        ->add('town', 'text', array('required' => false,
-                                     'label'    => 'Población'))
-        ->add('province', 'text', array('required' => false,
-                                     'label'    => 'Provincia'))
-        ->add('address', 'text', array('required' => false,
-                                     'label'    => 'Dirección'))
         ;
     }
     

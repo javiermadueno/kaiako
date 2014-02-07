@@ -37,6 +37,20 @@
 	font-size:20px;
 	line-height: 20px;
 }
+
+.hero .register form input[type="password"]{
+	display: block;
+	box-sizing: border-box;
+	padding:0 20px;
+	width:100%;
+	height:75px;
+	border:none !important;
+	border-radius: 4px !important;
+	background: rgba(76,117,157,0.8);
+	color:white;
+	font-size:20px;
+	line-height: 20px;
+}
 input::-webkit-input-placeholder {
 	color: #FFF;
 	/*font-family: "OpenCond";*/

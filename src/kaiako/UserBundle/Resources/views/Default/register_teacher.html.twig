@@ -1,152 +1,67 @@
 {% extends '::frontend.html.twig' %}
 {% block id 'user_teacher_register' %}
-{% block title %}Regístrate gratis como profesor{% endblock %}
+{% block title %}Regístrate como profesor{% endblock %}
 {% block article %}    
-    <div class="register_container" style="padding-bottom: 20px;">
-        <div class="reg_desc w520px" style="top:10px;">
-            <h1>{{ block('title') }}</h1>
-            <div>
-                {% if errorMsg | length > 0  or form_errors(form) | length > 0 %}
-                    <div class="errors mr10 ml2">
-                        {% if errorMsg | length > 0 %}
-                            <div><span class="error_icon"></span>{{ errorMsg }}</div>
-                        {% endif %}
-                        {% if form_errors(form) | length > 0 %}
-                            <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
-                        {% endif %}
-                    </div>
+<div class="hero">
+    <div class="register">
+        <div class="brand"></div>
+        <h1>{{ block('title') }}</h1>
+        {% if errorMsg | length > 0  or form_errors(form) | length > 0 %}
+            <div class="errors mr10 ml2">
+                {% if errorMsg | length > 0 %}
+                    <div><span class="error_icon"></span>{{ errorMsg }}</div>
                 {% endif %}
-                <form action="{{ path('user_teacher_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>            
-                    <fieldset class="profile_client">  
-                        <div class="fields w488px">                                                          
-                            
-                            <div id="fields2">
-                                <div>
-                                    <div class="error_field">
-                                        {{ form_errors(form.email)  }}
-                                    </div>                                
-                                    {{ form_label(form.email, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                    {{ form_widget(form.email) }}                                 
-                                </div>
-                                <div>
-                                    {% if errorPass is defined %}
-                                        <div class="error_field">
-                                            <ul><li>{{ errorPass }}</li></ul>
-                                        </div>
-                                    {% endif %}                                    
-                                    <div class="error_field">
-                                        {{ form_errors(form.password.first) }}
-                                    </div> 
-                                    {{ form_label(form.password.first, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                    {{ form_widget(form.password.first) }}
-                                </div>
-                                <div>
-                                    {{ form_label(form.password.second, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                    {{ form_widget(form.password.second) }}
-                                </div>  
-                                <div>
-                                    <div class="error_field">
-                                        {{ form_errors(form.nifCif)  }}
-                                    </div> 
-                                    {{ form_label(form.nifCif, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_nifcif' } }) }}
-                                    {{ form_widget(form.nifCif) }}
-                                </div>
-                                <div id="div_companyName">
-                                    {{ form_label(form.companyName, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                    {{ form_widget(form.companyName) }}
-                                </div>
-                                <div>
-                                    <div class="error_field">
-                                        {{ form_errors(form.name)  }}
-                                    </div>
-                                    {{ form_label(form.name, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_name'  } }) }}
-                                    {{ form_widget(form.name) }}
-                                </div>
-                                <div>
-                                    <div class="error_field">
-                                        {{ form_errors(form.surnames)  }}
-                                    </div>
-                                    {{ form_label(form.surnames, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_name'  } }) }}
-                                    {{ form_widget(form.surnames) }}
-                                </div>
-                                <div>
-                                    <div class="error_field">
-                                        {{ form_errors(form.telephone)  }}
-                                    </div>
-                                    {{ form_label(form.telephone, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                    {{ form_widget(form.telephone, {'attr': {'onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
-                                </div>
-                                <div>                                    
-                                    <div class="error_field">
-                                        {{ form_errors(form.mobile) }}
-                                    </div>
-                                    {{ form_label(form.mobile) }}
-                                    {{ form_widget(form.mobile, {'attr': {'onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }} 
-                                </div>    
-                                <div class="hidden">
-                                    {{ form_end(form) }}
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="right mt20">
-                            <input class="primary_button" onclick="$('#clienttype_taxType option[value=1]').prop('selected', true);" type="submit" value="Registrarme" />
-                        </div>
-                    </fieldset>  
-                </form>             
+                {% if form_errors(form) | length > 0 %}
+                    <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
+                {% endif %}
             </div>
-        </div>
+        {% endif %}
+        <form action="{{ path('user_teacher_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>            
+            {{ form_errors(form.email)  }}
+            {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}                                 
+            
+            {% if errorPass is defined %}
+                <ul><li>{{ errorPass }}</li></ul>
+            {% endif %}                                    
+            {{ form_errors(form.password.first) }}
+            {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
+            {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
+            
+            {{ form_errors(form.nifCif)  }}
+            {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
+            
+            {{ form_widget(form.companyName, { 'attr': {'placeholder': 'Empresa' } }) }}
+            
+            {{ form_errors(form.name)  }}
+            {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
+            
+            {{ form_errors(form.surnames)  }}
+            {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
+            
+            {{ form_errors(form.telephone)  }}
+            {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
+            
+            {{ form_errors(form.mobile) }}
+            {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
+            
+            {{ form_errors(form.town)  }}
+            {{ form_widget(form.town, { 'attr': {'placeholder': 'Población' } }) }}
+            
+            {{ form_errors(form.province)  }}
+            {{ form_widget(form.province, { 'attr': {'placeholder': 'Provincia' } }) }}
+            
+            {{ form_errors(form.address)  }}
+            {{ form_widget(form.address, { 'attr': {'placeholder': 'Dirección' } }) }}
+            
+            {{ form_errors(form.zipcode)  }}
+            {{ form_widget(form.zipcode, { 'attr': {'placeholder': 'Código postal' } }) }}
+                        
+            <div style="display:none">
+            {{ form_end(form) }}
+            </div>
+            <input class="boton boton-submit" type="submit" value="Registrarme" />
+        </form>
     </div>
-        
-    <script>
-            
-        $(document).ready(function(){
-            $("#clienttype_type option[value='4']").remove();
-
-        });
-            
-        // INICIO changeTypeClient
-        /* 
-         * Según el tipo de cliente que se seleccione, se pedirán unos u otros datos:
-         * - si es particular: DNI, nombre y apellidos
-         * - si es empresa: CIF, nombre del administrador, el nombre de la compañia
-         * */
-        function changeTypeClient()
-        {                
-            var value = parseInt($("#clienttype_type").val()); 
-            if(value === 1)      // Particular
-            {
-                // Ponemos visible los campos del formulario
-                show("fields2");
-                // Cambiamos label para que pida el DNI
-                $("#label_nifcif").empty();
-                $("#label_nifcif").append("DNI/NIE");
-                // Cambiamos label del AdminName para que pida Nombre y Apellidos
-                $("#label_adminName").empty();
-                $("#label_adminName").append("Nombre y Apellidos");
-                // Damos un nombre a la compañía, ya que no puede ser nulo
-                $("#clienttype_companyName").val("particular");
-                // Oculta el campo companyName
-                hide("div_companyName");
-            }else if ($.inArray(value,new Array(2, 3)) > -1){      // Profesional Automoción, Empresa
-                // Ponemos visible los campos del formulario
-                show("fields2");
-                // Cambiamos label para que pida el CIF
-                $("#label_nifcif").empty();
-                $("#label_nifcif").append("CIF");
-                // Cambiamos label del AdminName para que pida Nombre y Apellidos
-                $("#label_adminName").empty();
-                $("#label_adminName").append("Nombre del Administrador");
-                // Borramos el contenido del companyName, por si antes había seleccionado 'Particular', viene relleno con 'particular'
-                $("#clienttype_companyName").val("");
-                // Muestra el campo companyName
-                show("div_companyName");
-            }else{
-                // Ocultamos los campos del formulario, ya que no hay tipo de cliente seleccionado
-                hide("fields2");
-            }
-        }
-        // FIN changeTypeClient
-            
-    </script>
+</div>
 {% endblock %}
 {% block aside %}{% endblock %}

@@ -1,372 +1,55 @@
 {% extends '::frontend.html.twig' %}
-{% block id 'user_provider_register' %}
-{% block title %}Regístrate gratis como transportista{% endblock %}
-{% block article %}
-    <div class="title mb10" style="width: 1164px;margin-left: 22px;">
+{% block id 'user_student_register' %}
+{% block title %}Regístrate como alumno{% endblock %}
+{% block article %}    
+<div class="hero">
+    <div class="register">
+        <div class="brand"></div>
         <h1>{{ block('title') }}</h1>
-    </div>
-    {% if form_errors(form) | length > 0 %}
-    <div class="errors mr22 ml22">
-        {% if errorMsg is defined %}
-            <span class="error_icon"></span>{{ errorMsg }}
+        {% if errorMsg | length > 0  or form_errors(form) | length > 0 %}
+            <div class="errors mr10 ml2">
+                {% if errorMsg | length > 0 %}
+                    <div><span class="error_icon"></span>{{ errorMsg }}</div>
+                {% endif %}
+                {% if form_errors(form) | length > 0 %}
+                    <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
+                {% endif %}
+            </div>
         {% endif %}
-        <span class="error_icon"></span>{{ form_errors(form) }}
-    </div>
-    {% endif %} 
-    <div class="container_newTrOrder mr10">
-        <form id="form_registerProvider" name="form_registerProvider" action="{{ path('user_provider_register') }}" method="post" {{ form_enctype(form) }}>
-            <!--Cargo esta imagen transparente, para poder lanzar la función del onload al cargar la página-->
-            <img onload="changeTypeProvider(); select_province_town('{{ town }}');" class="z_index5" src="/eurotransportcar/web/bundles/user/images/transparent.gif"/>  
-            <fieldset id="1_provider" class="new_order no_border w100 left mt10">
-                <div class="w100">
-                    <div class="register_provider w49 left border_right">
-                        <div class="fields">                             
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.type) }}
-                                </div>
-                                {{ form_label(form.type, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.type, { 'attr': { 'onchange': 'changeTypeProvider();', 'class': 'w278px' } }) }}
-                            </div>
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.id) }}
-                                </div> 
-                                {{ form_label(form.id, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.id, { 'attr': { 'class': 'w270px' } }) }}
-                            </div>
-                            <div class="pl17">
-                                {% if errorPass is defined %}
-                                    <div class="error_field">
-                                        <ul><li>{{ errorPass }}</li></ul>
-                                    </div>
-                                {% endif %}                                    
-                                <div class="error_field">
-                                    {{ form_errors(form.password.first) }}
-                                </div> 
-                                {{ form_label(form.password.first, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.password.first, { 'attr': { 'class': 'w270px' } }) }}
-                            </div>
-                            <div class="pl17">
-                                {{ form_label(form.password.second, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.password.second, { 'attr': { 'class': 'w270px' } }) }}
-                            </div>
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.companyName) }}
-                                </div>
-                                {{ form_label(form.companyName, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_companyName' } }) }}
-                                {{ form_widget(form.companyName, { 'attr': { 'class': 'w270px' } }) }}
-                            </div>
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.nifCif) }}
-                                </div>
-                                {{ form_label(form.nifCif, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_nifcif' } }) }}
-                                {{ form_widget(form.nifCif, { 'attr': { 'class': 'w270px' }}) }}
-                            </div>
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.adminName) }}
-                                </div>
-                                {{ form_label(form.adminName, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.adminName, { 'attr': { 'class': 'w270px' } }) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="register_provider w49 right"> 
-                        <div class="fields">
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.telephone) }}
-                                </div>
-                                {{ form_label(form.telephone, label|default(null), { 'label_attr': { 'class': 'mandatory' } }) }}
-                                {{ form_widget(form.telephone, {'attr': {'onkeyup': 'onlyNumbers("providertype_telephone");', 'class': 'w270px'}}) }} 
-                            </div>
-                            <div class="pl17">
-                                {{ form_label(form.mobile) }}
-                                {{ form_widget(form.mobile, {'attr': {'onkeyup': 'onlyNumbers("providertype_mobile");', 'class': 'w270px'}}) }} 
-                            </div>
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.zipCode) }}
-                                </div>
-                                {{ form_label(form.zipCode, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_zipCode' } }) }}
-                                <div id="div_zipCode" class="wAuto">{{ form_widget(form.zipCode, {'attr': {'onkeyup': 'onlyNumbers("providertype_zipCode");', 'class': 'left w270px'}}) }} </div>
-                            </div>   
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.province) }}
-                                </div>
-                                {{ form_label(form.province, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_province' } }) }}
-                                <div id="div_province" class="wAuto">{{ form_widget(form.province, {'attr': {'class': 'left w278px'}}) }} </div>
-                            </div> 
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {% if errorTown is defined %}
-                                        <ul><li>{{ errorTown }}</li></ul>
-                                    {% endif %} 
-                                </div>
-                                <label id="label_town" class="mandatory">Población</label>
-                                <div id="div_town" class="wAuto">
-                                    <select id="providertype_town" name="town" class="left w278px">
-                                    </select>
-                                </div>
-                            </div> 
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.address)  }}
-                                </div>
-                                {{ form_label(form.address, label|default(null), { 'label_attr': { 'class': 'mandatory', 'id': 'label_address' } }) }}
-                                {{ form_widget(form.address, { 'attr': { 'class': 'w270px' } }) }}
-                            </div> 
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.serviceArea)  }}
-                                </div>
-                                {{ form_label(form.serviceArea, label|default(null), { 'label_attr': { 'class': 'mandatory'} }) }}
-                                {{ form_widget(form.serviceArea, {'attr': {'class': 'left w278px'}}) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="register_provider w100 mt10">
-                        <div class="fields">
-                            <div class="pl17">
-                                <div class="error_field">
-                                    {{ form_errors(form.vhTypes)  }}
-                                </div>
-                                {{ form_label(form.vhTypes, label|default(null), { 'label_attr': { 'class': 'mandatory'} }) }}
-                                <p style="padding-left: 177px; padding-top: 3px; margin-bottom: -5px; font-style: italic; color: #777;">
-                                    Selecciona los tipos de vehículo que vas a transportar
-                                </p>
-                                {% set i = 0 %}
-                                <div class="provider_vhType">  
-                                {% for vhType in form.vhTypes %} 
-                                    <div class="w30">
-                                        {{ form_widget(vhType) }}
-                                        {{ form_label(vhType) }}
-                                    </div>
-                                {% endfor %}                                             
-                                </div>  
-                            </div>
-                        </div>
-                    </div>                      
-                </div>  
-            </fieldset>  
-            <div class="hidden">
-                {{ form_widget(form.taxType) }}
-            </div> 
-            <div class="hidden">
-                {{ form_end(form) }}
+        <form action="{{ path('user_student_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>            
+            {{ form_errors(form.email)  }}
+            {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}                                 
+            
+            {% if errorPass is defined %}
+                <ul><li>{{ errorPass }}</li></ul>
+            {% endif %}                                    
+            {{ form_errors(form.password.first) }}
+            {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
+            {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
+            
+            {{ form_errors(form.nifCif)  }}
+            {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
+            
+            {{ form_widget(form.companyName, { 'attr': {'placeholder': 'Empresa' } }) }}
+            
+            {{ form_errors(form.name)  }}
+            {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
+            
+            {{ form_errors(form.surnames)  }}
+            {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
+            
+            {{ form_errors(form.telephone)  }}
+            {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
+            
+            {{ form_errors(form.mobile) }}
+            {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
+                        
+            <div style="display:none">
+            {{ form_end(form) }}
             </div>
-            <div class="right">
-                <div class="primary_button right mt20 hand" onclick="$('#providertype_taxType option[value=1]').prop('selected', true);document.form_registerProvider.submit();">Siguiente >></div>
-            </div>
+            <input class="boton boton-submit" type="submit" value="Registrarme" />
         </form>
     </div>
-
-    <script>
-        var ptown="";
-            
-        /* 
-         * Según el tipo de cliente que se seleccione, se pedirán unos u otros datos:
-         * - si es particular: DNI, nombre y apellidos
-         * - si es empresa: CIF, nombre del administrador, el nombre de la compañia
-         * */
-        function changeTypeProvider()
-        {                
-            var value = parseInt($("#providertype_type").val()); 
-            if(value === 1)      // Empresa
-            {
-                // Cambiamos label del CompanyName para que pida Razón Social
-                $("#label_companyName").empty();
-                $("#label_companyName").append("Razón Social");                
-                // Cambiamos label del AdminName para que pida Nombre de Administrador
-                $("#label_adminName").empty();
-                $("#label_adminName").append("Nombre del Administrador");
-                // Cambiamos label del NIF/CIF para que pida el CIF
-                $("#label_nifcif").empty();
-                $("#label_nifcif").append("CIF"); 
-                // Cambiamos label del CP para que pida el CP Social
-                $("#label_zipCode").empty();
-                $("#label_zipCode").append("CP Social"); 
-                // Cambiamos label de la Provincia para que pida la Provincia Social
-                $("#label_province").empty();
-                $("#label_province").append("Provincia Social"); 
-                // Cambiamos label de la Población para que pida la Población Social
-                $("#label_town").empty();
-                $("#label_town").append("Población Social");
-                // Cambiamos label de la Dirección para que pida la Dirección Social
-                $("#label_address").empty();
-                $("#label_address").append("Dirección Social");
-            }else if ($.inArray(value,new Array(2, 3, 4)) > -1){      // Autónomo
-                // Cambiamos label del CompanyName para que pida Nombre Empresa
-                $("#label_companyName").empty();
-                $("#label_companyName").append("Nombre Empresa"); 
-                // Cambiamos label del AdminName para que pida Nombre y Apellidos
-                $("#label_adminName").empty();
-                $("#label_adminName").append("Nombre y Apellidos");                
-                // Cambiamos label del NIF/CIF para que pida el NIF
-                $("#label_nifcif").empty();
-                $("#label_nifcif").append("NIF");
-                // Cambiamos label del CP para que pida el CP
-                $("#label_zipCode").empty();
-                $("#label_zipCode").append("CP");                 
-                // Cambiamos label de la Provincia para que pida la Provincia
-                $("#label_province").empty();
-                $("#label_province").append("Provincia");
-                // Cambiamos label de la Población para que pida la Población
-                $("#label_town").empty();
-                $("#label_town").append("Población");
-                // Cambiamos label de la Dirección para que pida la Dirección
-                $("#label_address").empty();
-                $("#label_address").append("Dirección");
-            }
-        }
-        
-        // INICIO select_province_town
-        /* Seleccionar provincia y ciudad al recargar el formulario. Los carga a partir del cp. Recibe si tiene que actualizarlo */
-        function select_province_town(town){     
-            // Si se recarga el formulario y se hubiera seleccionado alguna población, se guarda en la vble global para pasarla por ajax cuando
-            // se genere el select de poblaciones
-            ptown = town;
-            if ($("#providertype_zipCode").val() !== "")  // Viene cp
-                 updateByZc($("#providertype_zipCode").val());
-            else if($("#providertype_province").val() !== "")   // No viene cp pero sí viene provincia
-                 updateByProvince($("#providertype_province").val());
-        }        
-        // FIN select_province_town        
-        
-        $(document).ready(function() 
-        { 
-            // INICIO selección cp, provincia, población
-            
-            // PROVINCE 
-            $("#providertype_province").change(function() 
-            { 
-                updateByProvince($(this).val());
-            });
-            
-            // TOWN 
-            $("#providertype_town").change(function() 
-            { 
-                if ($("#providertype_town").val !== "")
-                {
-                    $("#indicator_ZipCode").remove();
-                    $('#div_zipCode').append("<div id='indicator_ZipCode' class='indicator left ml5 mt5 w20px'></div>");
-                    $.ajax 
-                    ({ 
-                        type: "POST", 
-                        cache: true, 
-                        dataType: 'json',
-                        url: "{{ path('fill_zc_input') }}", 
-                        data: {town: $(this).val()},
-                        success: function(data) 
-                        { 
-                            $("#providertype_zipCode").val((data.zipCode)+''); 
-                            $("#indicator_ZipCode").remove();
-                        }  
-                    }); 
-                }
-            });     
-                        
-            // ZIPCODE 
-            $("#providertype_zipCode").change(function() 
-            { 
-                updateByZc($(this).val());
-            });
-            
-            // FIN selección cp, provincia, población
-        });
-        
-        // Actualiza las poblaciones y borra el cp cuando se actualiza la provincia.   
-        function updateByProvince(prov)
-        {
-            $("#indicator_town").remove();
-            $('#div_town').append("<div id='indicator_town' class='indicator left ml5 mt5 w20px'></div>");
-            if ($('#providertype_zipCode').val() !== ""){
-                $("#indicator_zipCode").remove();
-                $('#div_zipCode').append("<div id='indicator_zipCode' class='indicator left ml5 mt5 w20px'></div>");
-            }
-            if (prov !== "")
-            {
-                $.ajax 
-                ({ 
-                    type: "POST", 
-                    cache: true, 
-                    dataType: 'html',
-                    url: "{{ path('change_town_select_by_prov') }}", 
-                    data: {province: prov},
-                    success: function(html) 
-                    { 
-                        $("#providertype_town").html(html); 
-                        $("#indicator_town").remove();
-                        $("#providertype_zipCode").val(""); 
-                        $("#indicator_zipCode").remove();
-                    }  
-                });
-            }else{
-                $("#providertype_town").html(""); 
-                $("#indicator_town").remove();
-                $("#providertype_zipCode").val("");  
-                $("#indicator_zipCode").remove();
-            }
-        }
-        
-        // Actualiza la provincia y las poblaciones de recogida a partir de un cp.
-        function updateByZc(zip_code)
-        {
-            $("#indicator_town").remove();
-            $('#div_town').append("<div id='indicator_town' class='indicator left ml5 mt5 w20px'></div>");
-            if (zip_code !== "")
-            {
-                // Buscamos las poblaciones con el cp escrito (puede haber más de una)
-                $("#indicator_province").remove();
-                $('#div_province').append("<div id='indicator_province' class='indicator left ml5 mt5 w20px'></div>");
-                $.ajax 
-                ({ 
-                    type: "POST", 
-                    cache: true, 
-                    dataType: 'html',
-                    url: "{{ path('change_town_select_by_cp') }}", 
-                    data: {zc: zip_code, selected: ptown},
-                    success: function(html) 
-                    { 
-                        $("#providertype_town").html(html);
-                        $("#indicator_town").remove();    
-                        ptown="";
-                    }  
-                }); 
-                $.ajax 
-                ({ 
-                    type: "POST", 
-                    cache: true, 
-                    dataType: 'json',
-                    url: "{{ path('change_prov_select') }}", 
-                    data: {zc: zip_code},
-                    success: function(data) 
-                    { 
-                        $("#providertype_province option[value='"+data.prov+"']").prop('selected', true);
-                        $("#indicator_province").remove(); 
-                    }  
-                });
-            }else{  // Cargamos todas las poblaciones de la provincia seleccionada, ya que no se ha especificado ningún cp
-                $.ajax 
-                ({ 
-                    type: "POST", 
-                    cache: true, 
-                    dataType: 'html',
-                    url: "{{ path('change_town_select_by_prov') }}", 
-                    data: {province: $("#providertype_province").val()},
-                    success: function(html) 
-                    {                
-                        $("#providertype_town").html(html); 
-                        $("#indicator_town").remove();      
-                    }  
-                }); 
-            }   
-        }
-        
-    </script>   
+</div>
 {% endblock %}
 {% block aside %}{% endblock %}
