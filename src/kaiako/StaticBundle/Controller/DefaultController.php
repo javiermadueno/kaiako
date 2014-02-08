@@ -10,7 +10,10 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('StaticBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository("AdBundle:Category")->findBy(array(), array('name' => 'ASC'));
+        $provinces = $em->getRepository("AdBundle:Province")->findBy(array(), array('name' => 'ASC'));
+        return $this->render('StaticBundle:Default:index.html.twig',array('provinces' => $provinces,'categories'=>$categories));
     }
     
     public function staticPageAction($page)

@@ -2,3 +2,5 @@
 *~
 *.diff
 /app/cache
+/app/logs
+/src/Acme

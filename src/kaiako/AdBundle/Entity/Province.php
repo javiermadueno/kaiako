@@ -20,6 +20,9 @@ class Province
     
     /** @ORM\Column(type="string", length=40) */
     protected $name;
+    
+    /** @ORM\Column(type="string", length=40) */
+    protected $slug;
 
     /**
      * Get id
@@ -52,5 +55,28 @@ class Province
     public function getName()
     {
         return $this->name;
+    }
+    
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Province
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

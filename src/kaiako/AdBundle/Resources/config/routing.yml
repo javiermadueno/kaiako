@@ -1,3 +1,7 @@
 ad_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: AdBundle:Default:index }
+
+filter_ads:  
+    pattern: /filter_ads
+    defaults: { _controller: AdBundle:Default:filterAds }
