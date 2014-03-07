@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+.block{
+	display:block;
+	width: 100%;
+}
 .navbar{
     margin-bottom: 0;
 }
@@ -54,6 +59,12 @@ select{
 	-webkit-appearance:none ;
 	--moz-appearance: none;
 	outline:none;
+	--moz-appearance: none;
+
+	/* Firefox fix para la flecha de los select */
+	text-indent: 0.01px;
+	text-overflow: ''; 
+	vertical-align: middle;
 }
 
 #datepicker_in{
