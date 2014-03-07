@@ -55,11 +55,12 @@
             
             {{ form_errors(form.zipcode)  }}
             {{ form_widget(form.zipcode, { 'attr': {'placeholder': 'Código postal' } }) }}
-                        
+            
+            <input class="boton boton-submit" type="submit" value="Registrarme" />
             <div style="display:none">
             {{ form_end(form) }}
             </div>
-            <input class="boton boton-submit" type="submit" value="Registrarme" />
+            
         </form>
     </div>
 </div>
