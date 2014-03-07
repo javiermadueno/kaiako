@@ -4,24 +4,28 @@
 {% block article %}
 <div class="hero">
     <div class="register">
-        <!--<h1>{{ block('title') }}</h1> -->
-
+        <div class="brand"></div>
+        <h1>{{ block('title') }}</h1>
+        
         <div class="flash-profile" style="width: 99%;">
             {% for message in app.session.flashbag.get('info') %}
-            <p class="flash-info"><span class="success_icon"></span>{{ message }}</p>
+                <p class="flash-info"><span class="success_icon"></span>{{ message }}</p>
             {% endfor %}  
         </div>
         {% if error %}
-        <div class="flash-identification">
-            <div class="errors">
-                <span class="error_icon"></span>{{ error.message | replace({"Bad credentials": "Identificación errónea"}) }}
+            <div class="flash-identification">
+                <div class="errors">
+                    <span class="error_icon"></span>{{ error.message | replace({"Bad credentials": "Identificación errónea"}) }}
+                </div>
             </div>
-        </div>
         {% endif %}
         <form action="{{ path('user_login_check') }}" method="post" class="mt10">
-            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Nombre de usuario" />
-            <input type="password" id="password" name="_password" placeholder="Contraseña" />  
-            <label for="remember_me"> <input type="checkbox" id="remember_me" name="_remember_me" checked="">No cerrar sesión</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+            <input type="password" id="password" name="_password" />  
+            <span style="float:right; width: 100%; text-align: right; margin-top: 2px; margin-right: 7px;">
+                <input type="checkbox" id="remember_me" name="_remember_me" checked="">
+                <label for="remember_me">No cerrar sesión</label>
+            </span>
             <input class="boton boton-submit" type="submit" value="Acceder">          
         </form>
     </div>

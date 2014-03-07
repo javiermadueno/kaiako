@@ -32,9 +32,9 @@ security:
             chain:
                 providers: [user_students, user_teachers]
         user_students:
-            entity: { class: kaiako\UserBundle\Entity\Student, property: id }
+            entity: { class: kaiako\UserBundle\Entity\Student, property: email }
         user_teachers:
-            entity: { class: kaiako\UserBundle\Entity\Teacher, property: id }
+            entity: { class: kaiako\UserBundle\Entity\Teacher, property: email }
         # Usuarios del backend
         administradores:
             memory:
