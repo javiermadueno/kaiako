@@ -4,6 +4,7 @@
 app/cache/*
 app/logs/*
 src/Acme/*
+node_
 # Archivos de bootstrap (compilan las clases más usadas en Symfony2)
 app/bootstrap*
 
