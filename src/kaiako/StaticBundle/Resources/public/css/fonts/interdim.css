@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'interdim';
+    src: url('interdim-webfont.eot');
+    src: url('interdim-webfont.eot?#iefix') format('embedded-opentype'),
+         url('interdim-webfont.woff') format('woff'),
+         url('interdim-webfont.ttf') format('truetype'),
+         url('interdim-webfont.svg#interdimensionalregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

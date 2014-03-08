@@ -1,85 +1,111 @@
-@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:300,400);
+@import url(fonts/interdim.css);
 
 .block{
 	display:block;
 	width: 100%;
 }
+
+body{
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ===========================================================================
+   Cabecera y menú de navegación
+   ======================================================================== */
 .navbar{
-    margin-bottom: 0;
+    margin-bottom: -1px;
 }
 
 .navbar-inner{
+	background: rgb(12,119,174);
     border-radius: 0;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
+    color:white;
 }
+
+.navbar .brand{
+	font-family: 'interdim', 'Helevtica Neue', Helvetica, sans-serif;
+	font-weight: 100;
+	color:white;
+}
+.navbar .brand img{
+	height:20px;
+}
+
+.navbar .nav > li > a{
+	color:white;
+	text-shadow: none;
+}
+.navbar .nav > li > a:hover{
+	color:#d3d3d3;
+}
+
+/* ===========================================================================
+   Hero portada principal
+   ======================================================================== */
 
 .hero{
 	overflow:hidden;
 	width:100%;
-	height: 800px;
-
+	height: 500px;
 	background: url(../images/background/ballesteros.jpg) center center no-repeat;
 	background-size: cover;
 }
 
 .hero .portada{
     position:relative;
-    padding:50px 30px;
+    top:100px;
 }
 
 .portada h2{
     color:white;
+    margin-bottom: 30px;
+    text-shadow: 0 -1px 2px rgba(0,0,0,0.6);
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding:0 20px;
-	height:50px;
-	border:none !important;
-	border-radius: 4px !important;
+	border: none !important;
+	border-radius: 3px !important;
 	background: rgba(76,117,157,0.8);
-	color:white;
-	font-size:20px;
-	line-height: 20px;
+	color: white;
 	font-family: "Comfortaa";
+	font-size: 15px;
+	height: 40px;
+	line-height: normal;
+	margin:0;
+	padding:10px 12px;
+	width:150px;
 }
 
 select{
-	box-sizing: border-box;
-	padding:0 20px;
-	height:50px;
-	border:none !important;
-	border-radius: 4px !important;
-	background: rgba(76,117,157,0.8);
-	color:white;
-	font-size:20px;
-	line-height: 20px;
-	font-family: "Comfortaa";
 	-webkit-appearance:none ;
-	--moz-appearance: none;
+	-moz-appearance: none;
 	outline:none;
-	--moz-appearance: none;
-
-	/* Firefox fix para la flecha de los select */
+	/* Firefox fix para la flecha de los select */x
 	text-indent: 0.01px;
 	text-overflow: ''; 
 	vertical-align: middle;
 }
 
-#datepicker_in{
+#datepicker_in,
+#datepicker_out{
 	padding-right:40px;
 	background: rgba(76,117,157,0.8) url(../images/icons/calendar.svg) right center no-repeat;
-	background-size: 15%;
+	background-size: 12%;
 	background-position-x: 94%; 
 	background-origin: padding-box;
 }
-#hour_in{
-	padding-right:40px;
-	background: rgba(76,117,157,0.8) url(../images/icons/clock.svg) right center no-repeat;
-	background-size: 15%;
-	background-position-x: 94%; 
-	background-origin: padding-box;
+#hour_in,
+#hour_out{
+	width:80px;
 }
 
 .hero .register{
@@ -124,36 +150,38 @@ select{
 	font-size:20px;
 	line-height: 20px;
 }
+
+
 input::-webkit-input-placeholder {
 	color: #FFF;
-	/*font-family: "OpenCond";*/
+	font-family: "Comfortaa";
 	font-weight: 300;
+	
 }
 
 input:-moz-placeholder { 
 	color: #FFF;  
-	font-family: "OpenCond";
+	font-family: "Comfortaa";
 	font-weight: 300;
+	
 }
 
 input::-moz-placeholder {  
 	color: #FFF; 
-	font-family: "OpenCond";
-	font-weight: 300; 
+	font-family: "Comfortaa";
+	font-weight: 300;
+	 
 }
 
 input:-ms-input-placeholder {  
 	color: #FFF;  
-	font-family: "OpenCond";
+	font-family: "Comfortaa";
 	font-weight: 300;
 }
 
 .boton{
-	display: block;
-	width: 100% !important;
-	height: 75px;
-	font-size: 20px;
-	padding:27px 20px;
+	height: 40px;
+	font-size: 15px;
 	border-radius: 4px !important;
 	box-sizing: border-box;
 	text-decoration: none;
@@ -161,13 +189,15 @@ input:-ms-input-placeholder {
 	transition: all 0.5;
 	-webit-transition: all 0.5;
 	-moz-transition: all 0.5;
-        border:none;
+     border:none;
+     vertical-align: middle;
 }
 
 .boton.boton-submit{
 	background:rgba(255,255,255,0.7);
 	color: rgb(52,154,213);
 	text-decoration: none;
+	padding:0.7rem 1.2rem;
 }
 
 .boton.boton-login{
@@ -177,28 +207,31 @@ input:-ms-input-placeholder {
 	text-shadow: 0px 0px 5px rgba(88,111,136,0.5);
 }
 
-
-
-input::-webkit-input-placeholder {
-	color: #FFF;
-	font-family: "Comfortaa";
-	
+.masdeportes{
+	padding:80px 0;
 }
 
-input:-moz-placeholder { 
-	color: #FFF;  
-	font-family: "Comfortaa";
-	
-}
+/* ===========================================================================
+   Footer
+   ======================================================================== */
+	footer{
+		padding:30px 0;
+		color:rgb(145,149,151);
+	}
+   footer .border-bottom{
+   	border-bottom: 2px solid rgb(145,149,151);
+   	margin-bottom:5px;
+   }
 
-input::-moz-placeholder {  
-	color: #FFF; 
-	font-family: "Comfortaa";
-	 
-}
+   footer ul{
+   	list-style: none;
+   	margin:0;
+   }
 
-input:-ms-input-placeholder {  
-	color: #FFF;  
-	font-family: "Comfortaa";
-	
-}
+   footer .li-icon{
+   	padding-left: 30px;
+   }
+
+   footer li > a{
+   	color:rgb(145,149,151);
+   }
