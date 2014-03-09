@@ -4,8 +4,10 @@
 {% block article %}
 <div class="hero">
     <div class="register">
-        <div class="brand"></div>
-        <h1>{{ block('title') }}</h1>
+        <div class="brand">
+            <img src="{{asset('bundles/static/images/logo_azul.png')}}" alt="">
+        </div>
+        <h2>{{ block('title') }}</h2>
         
         <div class="flash-profile" style="width: 99%;">
             {% for message in app.session.flashbag.get('info') %}
@@ -20,13 +22,15 @@
             </div>
         {% endif %}
         <form action="{{ path('user_login_check') }}" method="post" class="mt10">
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
-            <input type="password" id="password" name="_password" />  
+            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Usuario"/>
+            <input type="password" id="password" name="_password" placeholder="Contraseña"/>  
             <span style="float:right; width: 100%; text-align: right; margin-top: 2px; margin-right: 7px;">
-                <input type="checkbox" id="remember_me" name="_remember_me" checked="">
-                <label for="remember_me">No cerrar sesión</label>
+                <label for="remember_me">
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked="">
+                    No cerrar sesión
+                </label>
             </span>
-            <input class="boton boton-submit" type="submit" value="Acceder">          
+            <input class="boton boton-submit block" type="submit" value="Acceder">          
         </form>
     </div>
 </div>
