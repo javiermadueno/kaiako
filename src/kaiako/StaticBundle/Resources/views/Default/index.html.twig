@@ -2,17 +2,18 @@
 
 {% block article %}
 <div class="hero">
-    <div class="portada">
+    <div class="container">
+        <div class="portada span9">
         <h2>Si sabes que quieres aprender <br> Encuentra quien quieres que te enseñe</h2>
         <form action="{{path('filter_ads')}}" method="post">
+             <select name="filter[province]" id="province">
+                 {%for province in provinces%}
+                <option value="{{province.id}}">{{province.name}}</option>
+                {%endfor%}
+            </select>
             <select name="filter[category]" id="category">
                 {%for category in categories%}
                 <option value="{{category.id}}">{{category.name}}</option>
-                {%endfor%}
-            </select>
-            <select name="filter[province]" id="province">
-                 {%for province in provinces%}
-                <option value="{{province.id}}">{{province.name}}</option>
                 {%endfor%}
             </select>
 
@@ -22,15 +23,15 @@
             <select name="filter[hour_in]" id="hour_in">
                 <option value="" selected>Desde</option>
                 <option value="00:00">00:00</option>
-                <option value="1:00">1:00</option>
-                <option value="2:00">2:00</option>
-                <option value="3:00">3:00</option>
-                <option value="4:00">4:00</option>
-                <option value="5:00">5:00</option>
-                <option value="6:00">6:00</option>
-                <option value="7:00">7:00</option>
-                <option value="8:00">8:00</option>
-                <option value="9:00">9:00</option>
+                <option value="01:00">1:00</option>
+                <option value="02:00">2:00</option>
+                <option value="03:00">3:00</option>
+                <option value="04:00">4:00</option>
+                <option value="05:00">5:00</option>
+                <option value="06:00">6:00</option>
+                <option value="07:00">7:00</option>
+                <option value="08:00">8:00</option>
+                <option value="09:00">9:00</option>
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
                 <option value="12:00">12:00</option>
@@ -49,15 +50,15 @@
             <select name="filter[hour_out]" id="hour_out">
                 <option value="" selected>Hasta</option>
                 <option value="00:00">00:00</option>
-                <option value="1:00">1:00</option>
-                <option value="2:00">2:00</option>
-                <option value="3:00">3:00</option>
-                <option value="4:00">4:00</option>
-                <option value="5:00">5:00</option>
-                <option value="6:00">6:00</option>
-                <option value="7:00">7:00</option>
-                <option value="8:00">8:00</option>
-                <option value="9:00">9:00</option>
+                <option value="01:00">1:00</option>
+                <option value="02:00">2:00</option>
+                <option value="03:00">3:00</option>
+                <option value="04:00">4:00</option>
+                <option value="05:00">5:00</option>
+                <option value="06:00">6:00</option>
+                <option value="07:00">7:00</option>
+                <option value="08:00">8:00</option>
+                <option value="09:00">9:00</option>
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
                 <option value="12:00">12:00</option>
@@ -76,6 +77,7 @@
             <input type="submit" class="boton boton-submit" value="Buscar">
         </form>
     </div>
+    </div>
 </div>
 <script>
     $(function() {
@@ -89,5 +91,27 @@
         });
     });
 </script>
+
+<section class="masdeportes">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+                <h3>Deporte</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, impedit.</p>
+            </div>
+            <div class="span4">
+                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+                <h3>Deporte</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, iste.</p>
+            </div>
+            <div class="span4">
+                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+                <h3>Deporte</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, labore?</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

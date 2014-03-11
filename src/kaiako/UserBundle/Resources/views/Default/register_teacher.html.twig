@@ -20,8 +20,13 @@
             {{ form_errors(form.email)  }}
             {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}                                 
             
+<<<<<<< HEAD
             {% if errorPass is defined and errorPass != "" %}
                 <ul><li>{{ errorPass }}</li></ul>
+=======
+            {% if errorPass is defined %}
+                <!--<ul><li>{{ errorPass }}</li></ul>-->
+>>>>>>> 1b2a94cc64c7604cedb69111c23c2ce868c78121
             {% endif %}                                    
             {{ form_errors(form.password.first) }}
             {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
