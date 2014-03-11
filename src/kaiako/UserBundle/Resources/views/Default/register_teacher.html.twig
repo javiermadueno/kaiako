@@ -20,7 +20,7 @@
             {{ form_errors(form.email)  }}
             {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}                                 
             
-            {% if errorPass is defined %}
+            {% if errorPass is defined and errorPass != "" %}
                 <ul><li>{{ errorPass }}</li></ul>
             {% endif %}                                    
             {{ form_errors(form.password.first) }}

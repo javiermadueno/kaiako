@@ -54,7 +54,7 @@ class DefaultController extends Controller
                 if (strcmp($form->get('password')->get('first')->getViewData(), "") == 0 && strcmp($form->get('password')->get('second')->getViewData(), "") == 0)
                     $errorPass = "Por favor, indica la contraseña";
 
-                if ($form->isValid() && strcmp($user->getPassword(),"")!=0) {
+                if ($form->isValid() && strcmp($errorPass,"")!=0) {
                     // Guardar la información en la base de datos
                     $encoder = $this->get('security.encoder_factory')
                     ->getEncoder($user);
