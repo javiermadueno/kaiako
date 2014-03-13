@@ -168,8 +168,9 @@ class DefaultController extends Controller
                                                                         ));
     }
 
-    public function loginBoxAction()
+    public function menuAction()
     {
+        $usuario = $this->get('security.context')->getToken()->getUser();
         $request = $this->getRequest();
         $session = $request->getSession();
 
@@ -178,7 +179,10 @@ class DefaultController extends Controller
             $session->get(SecurityContext::AUTHENTICATION_ERROR)
         );
 
-        return $this->render('UserBundle:Default:loginBox.html.twig', array('last_username' => $session->get(SecurityContext::LAST_USERNAME),
-                                                                            'error' => $error));
+        return $this->render('UserBundle:Default:menu.html.twig', array(
+            'last_username' => $session->get(SecurityContext::LAST_USERNAME),
+            'error' => $error,
+            'usuario' => $usuario
+        ));
     }
 }

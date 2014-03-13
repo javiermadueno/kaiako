@@ -1,0 +1,49 @@
+<ul class="nav pull-right">
+  {% if is_granted('ROLE_USER_STUDENT') %} {# el usuario está logueado #}
+    <li class="dropdown">
+      <a href="{{ path('user_homepage', {name: usuario.name}) }}" class="dropdown-toggle" data-toggle="dropdown">
+        Bienvenido {{usuario.name}}
+        <strong class="caret"></strong>
+      </a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ path('user_homepage', {name: usuario.name}) }}">{{ "Ver mi perfil" | trans }}</a></li>
+          <li><a href="{{ path('user_logout') }}">{{ "Cerrar sesión" | trans }}</a></li>
+        </ul>
+    </li>
+
+  {% else %} {# el usuario todavía no ha hecho login #}
+    <li><a href="{{path('user_register')}}">REGISTRATE</a></li>
+    <li class="dropdown"> 
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">INICIA SESIÓN <strong class="caret"></strong></a>
+        <ul class="dropdown-menu">
+          <li>
+            <form class="navbar-form pull-left" action="{{ path('user_login_check') }}" method="post">
+              <input id="login_user" type="text" name="_username"
+                     value="{{ last_username | default('') }}" placeholder="Usuario" />
+              <input id="login_pass" type="password" name="_password" placeholder="Contraseña" />
+              <label for="remember_me">
+                <input type="checkbox" id="remember_me" name="_remember_me" checked="">
+                  No cerrar sesión
+              </label>
+              <input class="btn btn-primary block"type="submit" value="Entrar" />
+            </form>
+          </li>
+        </ul>
+    </li>
+  {% endif %}
+  <li><a href="#">AYUDA</a></li>
+  <li><a href="#">Publica tu anuncio</a></li>
+</ul>
+
+<script>
+  $(function() {
+  // Setup drop down menu
+  $('.dropdown-toggle').dropdown();
+ 
+  // Fix input element click problem
+  $('.dropdown input, .dropdown label').click(function(e) {
+    e.stopPropagation();
+  });
+});
+</script>
+  
