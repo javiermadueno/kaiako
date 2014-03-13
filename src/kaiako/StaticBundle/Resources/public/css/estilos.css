@@ -42,6 +42,16 @@ body{
 	color:#d3d3d3;
 }
 
+.dropdown-menu{
+	padding:20px;
+	color: #333333;
+}
+
+.caret{
+	border-top-color: #fff !important;
+	border-bottom-color: #fff !important;
+}
+
 /* ===========================================================================
    Hero portada principal
    ======================================================================== */
@@ -65,10 +75,10 @@ body{
     text-shadow: 0 -1px 2px rgba(0,0,0,0.6);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+.hero input[type="text"],
+.hero input[type="email"],
+.hero input[type="password"],
+.hero select {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -85,7 +95,7 @@ select {
 	width:150px;
 }
 
-select{
+.hero select{
 	-webkit-appearance:none ;
 	-moz-appearance: none;
 	outline:none;
@@ -158,28 +168,28 @@ select{
 	font-size: 20px;
 }
 
-input::-webkit-input-placeholder {
+.hero input::-webkit-input-placeholder {
 	color: #FFF;
 	font-family: "Comfortaa";
 	font-weight: 300;
 	
 }
 
-input:-moz-placeholder { 
+.hero input:-moz-placeholder { 
 	color: #FFF;  
 	font-family: "Comfortaa";
 	font-weight: 300;
 	
 }
 
-input::-moz-placeholder {  
+.hero input::-moz-placeholder {  
 	color: #FFF; 
 	font-family: "Comfortaa";
 	font-weight: 300;
 	 
 }
 
-input:-ms-input-placeholder {  
+.hero input:-ms-input-placeholder {  
 	color: #FFF;  
 	font-family: "Comfortaa";
 	font-weight: 300;

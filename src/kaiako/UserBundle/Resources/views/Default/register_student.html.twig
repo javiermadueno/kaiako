@@ -39,15 +39,17 @@
             {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
             
             {{ form_errors(form.telephone)  }}
-            {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
+            {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("studenttype_telephone");'}}) }} 
             
             {{ form_errors(form.mobile) }}
-            {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
-                        
+            {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("studenttype_mobile");'}}) }}
+            
+            <input class="boton boton-submit" type="submit" value="Registrarme" />
+            
             <div style="display:none">
             {{ form_end(form) }}
             </div>
-            <input class="boton boton-submit" type="submit" value="Registrarme" />
+            
         </form>
     </div>
 </div>

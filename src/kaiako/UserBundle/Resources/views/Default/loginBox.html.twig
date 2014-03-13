@@ -1,0 +1,26 @@
+<ul class="dropdown-menu">
+  <li>
+    <form class="navbar-form pull-left" action="{{ path('user_login_check') }}" method="post">
+      <input id="login_user" type="text" name="_username"
+             value="{{ last_username | default('') }}" placeholder="Usuario" />
+      <input id="login_pass" type="password" name="_password" placeholder="Contraseña" />
+      <label for="remember_me">
+        <input type="checkbox" id="remember_me" name="_remember_me" checked="">
+          No cerrar sesión
+      </label>
+      <input class="btn btn-primary block"type="submit" value="Entrar" />
+    </form>
+  </li>
+</ul>
+<script>
+  $(function() {
+  // Setup drop down menu
+  $('.dropdown-toggle').dropdown();
+ 
+  // Fix input element click problem
+  $('.dropdown input, .dropdown label').click(function(e) {
+    e.stopPropagation();
+  });
+});
+</script>
+  
