@@ -24,7 +24,7 @@
       <div class="span3 offset2">
         <div class="register">
           <form class="form-horizontal" action="{{ path('user_student_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>
-            
+
             <fieldset>
 
               <legend>Datos de acceso</legend>
@@ -58,21 +58,6 @@
                 {{ form_errors(form.surnames)  }}
                 {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
               </div>
-
-              <div class="control-group">
-                {{ form_errors(form.nifCif)  }}
-                {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
-              </div>
-
-              <div class="control-group">
-                {{ form_errors(form.mobile) }}
-                {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("studenttype_mobile");'}}) }}
-              </div>
-
-              <div class="control-group">
-                {{ form_errors(form.telephone)  }}
-                {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("studenttype_telephone");'}}) }} 
-              </div>                       
 
             </fieldset>
 
