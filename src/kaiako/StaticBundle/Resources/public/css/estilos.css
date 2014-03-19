@@ -23,6 +23,7 @@ body{
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     color:white;
+    border:none;
 }
 
 .navbar .brand{
@@ -251,3 +252,7 @@ body{
    footer li > a{
    	color:rgb(145,149,151);
    }
+/* ===========================================================================
+   Generales
+   ======================================================================== */
+.mt20{ padding-top: 50px; }

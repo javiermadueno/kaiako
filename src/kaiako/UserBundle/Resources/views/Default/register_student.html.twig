@@ -1,57 +1,96 @@
 {% extends '::frontend.html.twig' %}
 {% block id 'user_student_register' %}
 {% block title %}Regístrate como alumno{% endblock %}
-{% block article %}    
-<div class="hero">
-    <div class="register">
-        <div class="brand"></div>
+{% block article %} 
+<div>
+  <div class="container mt20">
+    <div class="row-fluid">
+      <div class="span4">
+        <div class="brand">
+          <img src="{{ asset('bundles/static/images/logos/logo_azul.png')}}" alt="Beanax">
+        </div>
         <h1>{{ block('title') }}</h1>
         {% if errorMsg | length > 0  or form_errors(form) | length > 0 %}
-            <div class="errors mr10 ml2">
-                {% if errorMsg | length > 0 %}
-                    <div><span class="error_icon"></span>{{ errorMsg }}</div>
-                {% endif %}
-                {% if form_errors(form) | length > 0 %}
-                    <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
-                {% endif %}
-            </div>
+        <div class="errors">
+          {% if errorMsg | length > 0 %}
+          <div><span class="error_icon"></span>{{ errorMsg }}</div>
+          {% endif %}
+          {% if form_errors(form) | length > 0 %}
+          <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
+          {% endif %}
+        </div>
         {% endif %}
-        <form action="{{ path('user_student_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>            
-            {{ form_errors(form.email)  }}
-            {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}                                 
+      </div>
+      <div class="span3 offset2">
+        <div class="register">
+          <form class="form-horizontal" action="{{ path('user_student_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>
             
-            {% if errorPass is defined %}
-                <ul><li>{{ errorPass }}</li></ul>
-            {% endif %}                                    
-            {{ form_errors(form.password.first) }}
-            {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
-            {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
-            
-            {{ form_errors(form.nifCif)  }}
-            {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
-            
-            {{ form_widget(form.companyName, { 'attr': {'placeholder': 'Empresa' } }) }}
-            
-            {{ form_errors(form.name)  }}
-            {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
-            
-            {{ form_errors(form.surnames)  }}
-            {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
-            
-            {{ form_errors(form.telephone)  }}
-            {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("studenttype_telephone");'}}) }} 
-            
-            {{ form_errors(form.mobile) }}
-            {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("studenttype_mobile");'}}) }}
-            
-            <input class="boton boton-submit" type="submit" value="Registrarme" />
-            
+            <fieldset>
+
+              <legend>Datos de acceso</legend>
+
+              <div class="control-group">
+                {{ form_errors(form.email)  }}
+                {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}
+              </div>   
+
+              <div class="control-group">
+                {{ form_errors(form.password.first) }}
+                {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
+              </div>         
+
+              <div class="control-group">
+                {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
+              </div>
+
+            </fieldset>
+
+            <fieldset>
+
+              <legend>Datos personales</legend>
+
+              <div class="control-group">
+                {{ form_errors(form.name)  }}
+                {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
+              </div>
+
+              <div class="control-group">
+                {{ form_errors(form.surnames)  }}
+                {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
+              </div>
+
+              <div class="control-group">
+                {{ form_errors(form.nifCif)  }}
+                {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
+              </div>
+
+              <div class="control-group">
+                {{ form_errors(form.mobile) }}
+                {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("studenttype_mobile");'}}) }}
+              </div>
+
+              <div class="control-group">
+                {{ form_errors(form.telephone)  }}
+                {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("studenttype_telephone");'}}) }} 
+              </div>                       
+
+            </fieldset>
+
+            <input class="btn btn-primary" type="submit" value="Registrarme" />
+
             <div style="display:none">
-            {{ form_end(form) }}
+              {{ form_end(form) }}
             </div>
-            
-        </form>
+
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
+
 {% endblock %}
 {% block aside %}{% endblock %}
