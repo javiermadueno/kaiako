@@ -4,11 +4,10 @@ namespace kaiako\AdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Doctrine\Common\Collections as Collections;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="kaiako\AdBundle\Entity\AdRepository")
 */
 class Ad
 {
@@ -42,6 +41,9 @@ class Ad
     protected $schedules;
     
     /** @ORM\Column(type="string") */
+    protected $headline;
+    
+    /** @ORM\Column(type="string") */
     protected $description;
     
     /** @ORM\Column(type="float") */
@@ -53,32 +55,28 @@ class Ad
     /** @ORM\Column(type="datetime",nullable=true) */
     protected $dateTo;
     
-    /** 
-     * @var ArrayCollection $provinces
-     * @ORM\ManyToMany(targetEntity="kaiako\AdBundle\Entity\Province")
-     * @ORM\JoinTable(name="provinces_ads",
-     *      joinColumns={@ORM\JoinColumn(name="ad_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="province_id", referencedColumnName="id")}
-     *      ) 
-    */
-    protected $provinces;
     
-    /** 
-     * @var ArrayCollection $skiResorts
-     * @ORM\ManyToMany(targetEntity="kaiako\AdBundle\Entity\SkiResort")
-     * @ORM\JoinTable(name="skiresorts_ads",
-     *      joinColumns={@ORM\JoinColumn(name="ad_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="skiresort_id", referencedColumnName="id")}
-     *      ) 
-    */
-    protected $skiResorts;
+    /**
+     * @ORM\ManyToOne(targetEntity="kaiako\AdBundle\Entity\Province", inversedBy="ads")
+     * @ORM\JoinColumn(name="province_id", referencedColumnName="id", nullable=false)
+     */
+    protected $province;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="kaiako\AdBundle\Entity\SkiResort", inversedBy="ads")
+     * @ORM\JoinColumn(name="skiresort_id", referencedColumnName="id", nullable=true)
+     */
+    protected $skiResort;
+    
+    /** @ORM\Column(type="boolean") */
+    protected $groups;
 
 
     public function __construct()
     {
         $this->date = new \DateTime();
-        $this->messages = new \Collections\ArrayCollection();
-        $this->schedules = new \Collections\ArrayCollection();
+        $this->messages = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->schedules = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     
@@ -91,6 +89,29 @@ class Ad
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set headline
+     *
+     * @param string $headline
+     * @return Ad
+     */
+    public function setHeadline($headline)
+    {
+        $this->headline = $headline;
+
+        return $this;
+    }
+
+    /**
+     * Get headline
+     *
+     * @return string 
+     */
+    public function getHeadline()
+    {
+        return $this->headline;
     }
 
     /**
@@ -298,68 +319,71 @@ class Ad
     }
 
     /**
-     * Add provinces
+     * Set province
      *
-     * @param \kaiako\AdBundle\Entity\Province $provinces
+     * @param \kaiako\AdBundle\Entity\Province $province
      * @return Ad
      */
-    public function addProvince(\kaiako\AdBundle\Entity\Province $provinces)
+    public function setProvince(\kaiako\AdBundle\Entity\Province $province)
     {
-        $this->provinces[] = $provinces;
+        $this->province = $province;
 
         return $this;
     }
 
     /**
-     * Remove provinces
+     * Get province
      *
-     * @param \kaiako\AdBundle\Entity\Province $provinces
+     * @return \kaiako\AdBundle\Entity\Province 
      */
-    public function removeProvince(\kaiako\AdBundle\Entity\Province $provinces)
+    public function getProvince()
     {
-        $this->provinces->removeElement($provinces);
+        return $this->province;
     }
-
+    
     /**
-     * Get provinces
+     * Set skiResort
      *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProvinces()
-    {
-        return $this->provinces;
-    }
-
-    /**
-     * Add skiResorts
-     *
-     * @param \kaiako\AdBundle\Entity\SkiResort $skiResorts
+     * @param \kaiako\AdBundle\Entity\SkiResort $skiResort
      * @return Ad
      */
-    public function addSkiResort(\kaiako\AdBundle\Entity\SkiResort $skiResorts)
+    public function setSkiResort(\kaiako\AdBundle\Entity\SkiResort $skiResort)
     {
-        $this->skiResorts[] = $skiResorts;
+        $this->skiResort = $skiResort;
 
         return $this;
     }
 
     /**
-     * Remove skiResorts
+     * Get skiResort
      *
-     * @param \kaiako\AdBundle\Entity\SkiResort $skiResorts
+     * @return \kaiako\AdBundle\Entity\SkiResort
      */
-    public function removeSkiResort(\kaiako\AdBundle\Entity\SkiResort $skiResorts)
+    public function getSkiResort()
     {
-        $this->skiResorts->removeElement($skiResorts);
+        return $this->skiResort;
+    }
+    
+    /**
+     * Set groups
+     *
+     * @param string $groups
+     * @return Ad
+     */
+    public function setGroups($groups)
+    {
+        $this->groups = (boolean)$groups;
+    
+        return $this;
     }
 
     /**
-     * Get skiResorts
+     * Get groups
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return boolean 
      */
-    public function getSkiResorts()
+    public function getGroups()
     {
-        return $this->skiResorts;
+        return $this->groups;
     }
 }

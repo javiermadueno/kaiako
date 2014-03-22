@@ -82,4 +82,9 @@ class SkiResort
     {
         return $this->province;
     }
+    
+    public function __toString()
+    {
+        return $this->getId();
+    }
 }

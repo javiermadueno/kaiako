@@ -1,0 +1,54 @@
+{% extends '::frontend.html.twig' %}
+{% block id 'ad_new_ad' %}
+{% block title %}Nuevo anuncio{% endblock %}
+{% block article %}    
+<div class="hero">
+    <div class="register">
+        <div class="brand"></div>
+        <h1>{{ block('title') }}</h1>
+        {% if errorMsg is defined and errorMsg | length > 0  or form_errors(form) | length > 0 %}
+            <div class="errors mr10 ml2">
+                {% if errorMsg | length > 0 %}
+                    <div><span class="error_icon"></span>{{ errorMsg }}</div>
+                {% endif %}
+                {% if form_errors(form) | length > 0 %}
+                    <div><span class="error_icon"></span>{{ form_errors(form) }}</div>
+                {% endif %}
+            </div>
+        {% endif %}
+        <form action="{{ path('ad_new_ad', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>            
+            {{ form_errors(form.category)  }}
+            {{ form_widget(form.category) }}  
+            
+            {{ form_errors(form.province)  }}
+            {{ form_widget(form.province) }}
+            
+            {{ form_errors(form.skiResort)  }}
+            {{ form_widget(form.skiResort) }}
+            
+            {{ form_errors(form.headline)  }}
+            {{ form_widget(form.headline, { 'attr': {'placeholder': 'Titular' } }) }}
+                        
+            {{ form_errors(form.description)  }}
+            {{ form_widget(form.description, { 'attr': {'placeholder': 'Descripción' } }) }}
+            
+            {{ form_errors(form.prize)  }}
+            {{ form_widget(form.prize, { 'attr': {'placeholder': 'Precio' } }) }}
+            
+            {{ form_errors(form.dateTo)  }}
+            {{ form_widget(form.dateTo, { 'attr': {'placeholder': 'Fecha expiración' } }) }}
+            
+            {{ form_errors(form.groups)  }}
+            {{ form_widget(form.groups) }}            
+            
+            
+            <input class="boton boton-submit" type="submit" value="Publicar" />
+            <div style="display:none">
+            {{ form_end(form) }}
+            </div>
+            
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block aside %}{% endblock %}

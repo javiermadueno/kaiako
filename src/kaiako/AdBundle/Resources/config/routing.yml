@@ -5,3 +5,7 @@ ad_homepage:
 filter_ads:  
     pattern: /filter_ads
     defaults: { _controller: AdBundle:Default:filterAds }
+    
+ad_new_ad:
+    pattern: /new_ad
+    defaults: { _controller: AdBundle:Default:newAd }
