@@ -59,7 +59,11 @@ class DefaultController extends Controller
             $this->get('request')->query->get('page', 1),
             10
         );
-        return $this->render('AdBundle:Default:index.html.twig', array('ads' => $ads));
+        return $this->render('AdBundle:Default:index.html.twig', 
+            array('ads' => $ads, 
+                'session' => $filters)
+
+        );
         //$trOrders = $em->getRepository('TrOrderBundle:TrOrder')->geographicFilterTrOrders($filters, 0, 1);
         
         //return $this->render('TrOrderBundle:Default:includes/auction_trOrder.html.twig', array('trOrders' => $trOrders));
