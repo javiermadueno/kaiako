@@ -41,19 +41,23 @@ class DefaultController extends Controller
             $errorMsg = 'Para publicar un transporte debe estar registrado como cliente.';
         else
             $errorMsg = "";
+
+
         
         if ($request->getMethod() == 'POST') {
+
             $email=$request->get('teachertype[email]', null, true);
             $existUser = $em->getRepository('UserBundle:Teacher')->findBy(array('email' => $email));
             if (!$existUser) {
                 
                 // Validar los datos enviados y guardarlos en la base de datos
-                $form->bind($request);
+               // $form->bind($request);
+
                 
                 // Verifica que ha introducido la contraseña
                 if (strcmp($form->get('password')->get('first')->getViewData(), "") == 0 && strcmp($form->get('password')->get('second')->getViewData(), "") == 0)
                     $errorPass = "Por favor, indica la contraseña";
-
+                    $form->handleRequest($request);
                 if ($form->isValid() && strcmp($errorPass,"")!=0) {
                     // Guardar la información en la base de datos
                     $encoder = $this->get('security.encoder_factory')

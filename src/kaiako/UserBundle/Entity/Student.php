@@ -55,9 +55,6 @@ class Student implements UserInterface
     
     /** @ORM\Column(type="datetime") */
     protected $date;
-
-    /** @ORM\Column(type="boolean", nullable=false) */
-    protected $newsletter;
     
     public function __construct()
     {
@@ -243,29 +240,5 @@ class Student implements UserInterface
     {
         return $this->surnames;
     }
-
-    /**
-    * Get nesletter
-    * 
-    * @return boolean
-    */
-
-    public function getNewsletter()
-    {
-        return $this->newsletter;
-    }
-    /**
-    * Set newsletter
-    *
-    * @param boolean $boolean
-    * @return Student
-    */
-    public function setNewsletter($boolean)
-    {
-        $this->newsletter = $boolean;
-
-        return $this;
-    }
-
 
 }
