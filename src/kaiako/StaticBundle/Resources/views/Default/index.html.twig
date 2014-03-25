@@ -1,117 +1,181 @@
 {% extends '::frontend.html.twig' %}
 
 {% block article %}
-<div class="hero">
-    <div class="container">
-        <div class="portada span9">
-        <h2>Si sabes que quieres aprender <br> Encuentra quien quieres que te enseñe</h2>
-        <form action="{{path('filter_ads')}}" method="post">
-             <select name="filter[province]" id="province">
-                 {%for province in provinces%}
-                <option value="{{province.id}}">{{province.name}}</option>
-                {%endfor%}
-            </select>
-            <select name="filter[category]" id="category">
-                {%for category in categories%}
-                <option value="{{category.id}}">{{category.name}}</option>
-                {%endfor%}
-            </select>
 
-            <input type="text" id="datepicker_in" name="filter[datepicker_in]">
-            <input type="text" id="datepicker_out" name="filter[datepicker_out]">
+<section class="hero">
+  <div class="html_carousel">
+    <div id="slider">
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_1.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_2.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_3.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_5.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_6.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_7.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_8.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_9.jpg')}}" alt=""></div>
+     <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_10.jpg')}}" alt=""></div>
+      
+    </div>
+    <div class="clearfix"></div>
+    <div id="pagination"></div>
+    <a class="prev" id="prev" href="#"><i class="fa fa-angle-left fa-3"></i></a>
+    <a class="next" id="next" href="#"><i class="fa fa-angle-right fa-3"></i></a>
+  </div>
 
-            <select name="filter[hour_in]" id="hour_in">
-                <option value="" selected>Desde</option>
-                <option value="00:00">00:00</option>
-                <option value="01:00">1:00</option>
-                <option value="02:00">2:00</option>
-                <option value="03:00">3:00</option>
-                <option value="04:00">4:00</option>
-                <option value="05:00">5:00</option>
-                <option value="06:00">6:00</option>
-                <option value="07:00">7:00</option>
-                <option value="08:00">8:00</option>
-                <option value="09:00">9:00</option>
-                <option value="10:00">10:00</option>
-                <option value="11:00">11:00</option>
-                <option value="12:00">12:00</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="15:00">15:00</option>
-                <option value="16:00">16:00</option>
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
-                <option value="19:00">19:00</option>
-                <option value="20:00">20:00</option>
-                <option value="21:00">21:00</option>
-                <option value="22:00">22:00</option>
-                <option value="23:00">23:00</option>
-            </select>
-            <select name="filter[hour_out]" id="hour_out">
-                <option value="" selected>Hasta</option>
-                <option value="00:00">00:00</option>
-                <option value="01:00">1:00</option>
-                <option value="02:00">2:00</option>
-                <option value="03:00">3:00</option>
-                <option value="04:00">4:00</option>
-                <option value="05:00">5:00</option>
-                <option value="06:00">6:00</option>
-                <option value="07:00">7:00</option>
-                <option value="08:00">8:00</option>
-                <option value="09:00">9:00</option>
-                <option value="10:00">10:00</option>
-                <option value="11:00">11:00</option>
-                <option value="12:00">12:00</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="15:00">15:00</option>
-                <option value="16:00">16:00</option>
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
-                <option value="19:00">19:00</option>
-                <option value="20:00">20:00</option>
-                <option value="21:00">21:00</option>
-                <option value="22:00">22:00</option>
-                <option value="23:00">23:00</option>
-            </select>
-            <input type="submit" class="boton boton-submit" value="Buscar">
-        </form>
+  <div class="container">
+    <div class="row">
+      <div class="portada span9">
+      <h2>Si sabes que quieres aprender <br> Encuentra quien quieres que te enseñe</h2>
+      <form action="{{path('filter_ads')}}" method="post">
+         <select name="filter[province]" id="province">
+           {%for province in provinces%}
+           <option value="{{province.id}}">{{province.name}}</option>
+           {%endfor%}
+         </select>
+         <select name="filter[category]" id="category">
+          {%for category in categories%}
+          <option value="{{category.id}}">{{category.name}}</option>
+          {%endfor%}
+        </select>
+
+        <input type="text" id="datepicker_in" name="filter[datepicker_in]">
+        <input type="text" id="datepicker_out" name="filter[datepicker_out]">
+
+        <select name="filter[hour_in]" id="hour_in">
+          <option value="" selected>Desde</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">1:00</option>
+          <option value="02:00">2:00</option>
+          <option value="03:00">3:00</option>
+          <option value="04:00">4:00</option>
+          <option value="05:00">5:00</option>
+          <option value="06:00">6:00</option>
+          <option value="07:00">7:00</option>
+          <option value="08:00">8:00</option>
+          <option value="09:00">9:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+        </select>
+        <select name="filter[hour_out]" id="hour_out">
+          <option value="" selected>Hasta</option>
+          <option value="00:00">00:00</option>
+          <option value="01:00">1:00</option>
+          <option value="02:00">2:00</option>
+          <option value="03:00">3:00</option>
+          <option value="04:00">4:00</option>
+          <option value="05:00">5:00</option>
+          <option value="06:00">6:00</option>
+          <option value="07:00">7:00</option>
+          <option value="08:00">8:00</option>
+          <option value="09:00">9:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+          <option value="20:00">20:00</option>
+          <option value="21:00">21:00</option>
+          <option value="22:00">22:00</option>
+          <option value="23:00">23:00</option>
+        </select>
+        <input type="submit" class="boton boton-submit" value="Buscar">
+      </form>
     </div>
     </div>
-</div>
+    
+  </div>
+</section>
 <script>
-    $(function() {
-        $("#datepicker_in").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true
-        });
-        $("#datepicker_out").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true
-        });
-    });
+$(function() {
+  $("#datepicker_in").datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true
+  });
+  $("#datepicker_out").datepicker({
+    showOtherMonths: true,
+    selectOtherMonths: true
+  });
+});
 </script>
 
 <section class="masdeportes">
-    <div class="container">
-        <div class="row">
-            <div class="span4">
-                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
-                <h3>Deporte</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, impedit.</p>
-            </div>
-            <div class="span4">
-                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
-                <h3>Deporte</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, iste.</p>
-            </div>
-            <div class="span4">
-                <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
-                <h3>Deporte</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, labore?</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+        <h3>Deporte</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, impedit.</p>
+      </div>
+      <div class="span4">
+        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+        <h3>Deporte</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, iste.</p>
+      </div>
+      <div class="span4">
+        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+        <h3>Deporte</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, labore?</p>
+      </div>
     </div>
+  </div>
 </section>
+
+<script src="{{ asset('bundles/static/js/jquery.fred.js')}}"></script>
+
+<script>
+      $(document).ready(function(){
+        $("#slider").carouFredSel({
+          responsive: true,
+          auto: {
+            timeoutDuration: 10000,
+            play:true,
+            delay:3000
+          },
+          items: {
+              visible: 1,
+              minimum: 1,
+              width: 1024,
+              height: "36%"
+            },
+          scroll: {
+            pauseOnHover: true,
+            fx: "crossfade",
+            duration: 1200
+          },
+          pagination:{
+            container: "#pagination",
+            anchorBuilder: function(){
+
+              str="<div class=\"bullet\">";
+              str+="<span></span>";
+              str+="</div>";
+
+              return str;
+            }
+          },
+          prev : "#prev",
+          next : "#next"
+        
+        });
+
+      });
+    </script>
 
 {% endblock %}

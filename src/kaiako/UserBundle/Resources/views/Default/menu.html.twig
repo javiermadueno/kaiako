@@ -24,7 +24,7 @@
   {% else %} {# el usuario todavía no ha hecho login #}
     <li><a href="{{path('user_register')}}">REGISTRATE</a></li>
     <li class="dropdown"> 
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">INICIA SESIÓN <strong class="caret"></strong></a>
+      <a href="{{ path('user_login') }}" class="dropdown-toggle" data-toggle="dropdown">INICIA SESIÓN <strong class="caret"></strong></a>
         <ul class="dropdown-menu">
           <li>
             <form class="navbar-form pull-left" action="{{ path('user_login_check') }}" method="post">
