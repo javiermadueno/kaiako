@@ -1,1 +1,12 @@
-Hello {{ name }}!
+{% extends '::frontend.html.twig' %}
+
+{% block article %}
+	<div class="mt20">
+		{% for sesion in session %}
+			{{sesion}}
+		{% endfor %}
+	</div>
+{% endblock %}
+
+{% block aside %}
+{% endblock %}

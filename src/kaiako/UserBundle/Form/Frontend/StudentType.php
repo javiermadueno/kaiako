@@ -24,17 +24,6 @@ class StudentType extends AbstractType
                                          'required' => false))
         ->add('surnames', 'text', array('label'    => 'Apellidos',
                                          'required' => false))
-        ->add('companyName','text',array('required' => false,
-                                         'label'    => 'Nombre de la Empresa'))
-        ->add('nifCif', 'text', array('required'    => false,
-                                      'label'       => 'CIF/NIF',
-                                      'attr'        => array('maxlength' => 9)))
-        ->add('telephone', 'text', array('required' => false,
-                                         'label'    => 'Teléfono',
-                                         'attr'     => array('maxlength' => 14)))
-        ->add('mobile', 'text', array('required'    => false,
-                                      'label'       => 'Móvil',
-                                      'attr'        => array('maxlength' => 14)))
         ;
     }
     
