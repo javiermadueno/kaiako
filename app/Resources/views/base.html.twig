@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="{{asset('bundles/static/css/bootstrap.css')}}" type="text/css">
-        <link rel="stylesheet" href="{{asset('bundles/static/css/bootstrap-responsive.css')}}" type="text/css">
+        {# <link rel="stylesheet" href="{{asset('bundles/static/css/bootstrap-responsive.css')}}" type="text/css"> #}
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" type="text/css">
         <link rel="stylesheet" href="{{asset('bundles/static/css/estilos.css')}}">
         {% endblock %}
@@ -16,22 +16,23 @@
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script src="{{ asset('bundles/static/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('bundles/static/js/holder.js') }}"></script>
         
         {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
 
-        <footer>
+       <footer>
             <div class="container">
                 <div class="row border-bottom">
-                    <div class="span3">Descubre Beanax</div>
-                    <div class="span3">Descubre Beanax</div>
-                    <div class="span3">Beanax</div>
-                    <div class="span3">Stay Connected</div>
+                    <div class="col-sm-3 col-md-3">Descubre Beanax</div>
+                    <div class="col-sm-3 col-md-3">Descubre Beanax</div>
+                    <div class="col-sm-3 col-md-3">Beanax</div>
+                    <div class="col-sm-3 col-md-3">Stay Connected</div>
                 </div>
                 <div class="row">
-                    <div class="span3">
+                    <div class="col-sm-3 col-md-3">
                         <ul>
                             <li><a href="#">Confianza y Seguridad</a></li>
                             <li><a href="#">Invita a tus amigos</a></li>
@@ -39,7 +40,7 @@
                             <li><a href="#">Historias</a></li>
                         </ul>
                     </div>
-                    <div class="span3">
+                    <div class="col-sm-3 col-md-3">
                         <ul>
                             <li><a href="#">Empresa</a></li>
                             <li><a href="#">Acerca de Beanax</a></li>
@@ -49,7 +50,7 @@
                             <li><a href="#">Políticas</a></li>
                         </ul>
                     </div>
-                    <div class="span3">
+                    <div class="col-sm-3 col-md-3">
                         <ul>
                             <li><a href="#">Ser un profesor responsable</a></li>
                             <li><a href="#">Respuesta a tus dudas</a></li>
@@ -57,7 +58,7 @@
                             <li><a href="#">Condiciones y privacidad</a></li>
                         </ul>
                     </div>
-                    <div class="span3">
+                    <div class="col-sm-3 col-md-3">
                         <ul>
                             <li class="li-icon rss"><a href="#">Feed RSS</a></li>
                             <li class="li-icon twitter"><a href="#">twitter.com/beanax</a></li>

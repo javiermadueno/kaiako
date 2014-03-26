@@ -4,8 +4,8 @@
 {% block article %}
 <div>
   <div class="container mt20">
-    <div class="row-fluid">
-      <div class="span4">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
         <div class="brand">
           <img src="{{asset('bundles/static/images/logos/logo_azul.png')}}" alt="">
         </div>
@@ -21,43 +21,43 @@
         </div>
         {% endif %}
       </div>
-      <div class="span3 offset2">
+      <div class="col-lg-offset-2 col-sm-3 col-md-3">
         <div class="register">
-          <form class="form-horizontal"action="{{ path('user_teacher_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}> 
+          <form class="form-horizontal" action="{{ path('user_teacher_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }} > 
 
             <fieldset>
               <legend>Datos de acceso</legend>
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.email)  }}
-                {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}
+                {{ form_widget(form.email, { 'attr': {'class':'form-control', 'placeholder': 'Email' } }) }}
               </div>
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.password.first) }}
-                {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
+                {{ form_widget(form.password.first, { 'attr': {'class':'form-control', 'placeholder': 'Contraseña' } }) }}
               </div>
 
-              <div class="control-group">
-                {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
+              <div class="form-group">
+                {{ form_widget(form.password.second, { 'attr': {'class':'form-control', 'placeholder': 'Repita la contraseña' } }) }}
               </div>
             </fieldset> 
 
             <fieldset>
               <legend>Datos personales</legend>
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.name)  }}
-                {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
+                {{ form_widget(form.name, { 'attr': {'class':'form-control', 'placeholder': 'Nombre' } }) }}
               </div>
 
-              <div class="control-group">
+              <div class="form-group">
                {{ form_errors(form.surnames)  }}
-               {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
+               {{ form_widget(form.surnames, { 'attr': {'class':'form-control', 'placeholder': 'Apellidos' } }) }}
              </div>
 
-             <div class="control-group">
+             <div class="form-group">
               {{ form_errors(form.nifCif)  }}
-              {{ form_widget(form.nifCif, { 'attr': {'placeholder': 'DNI/CIF' } }) }}
+              {{ form_widget(form.nifCif, { 'attr': {'class':'form-control', 'placeholder': 'DNI/CIF' } }) }}
             </div>
 
           </fieldset>  
@@ -66,47 +66,47 @@
 
             <legend>Mas información</legend>
 
-            <div class="control-group">
-              {{ form_widget(form.companyName, { 'attr': {'placeholder': 'Empresa' } }) }}
+            <div class="form-group">
+              {{ form_widget(form.companyName, { 'attr': {'class':'form-control', 'placeholder': 'Empresa' } }) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.telephone)  }}
-              {{ form_widget(form.telephone, {'attr': {'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
+              {{ form_widget(form.telephone, {'attr': {'class':'form-control', 'placeholder': 'Teléfono','onkeyup': 'onlyNumbers("teachertype_telephone");'}}) }} 
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.mobile) }}
-              {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
+              {{ form_widget(form.mobile, {'attr': {'class':'form-control', 'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.mobile) }}
-              {{ form_widget(form.mobile, {'attr': {'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
+              {{ form_widget(form.mobile, {'attr': {'class':'form-control', 'placeholder': 'Teléfono móvil','onkeyup': 'onlyNumbers("clienttype_mobile");'}}) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.town)  }}
-              {{ form_widget(form.town, { 'attr': {'placeholder': 'Población' } }) }}
+              {{ form_widget(form.town, { 'attr': {'class':'form-control', 'placeholder': 'Población' } }) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.province)  }}
-              {{ form_widget(form.province, { 'attr': {'placeholder': 'Provincia' } }) }}
+              {{ form_widget(form.province, { 'attr': {'class':'form-control', 'placeholder': 'Provincia' } }) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.address)  }}
-              {{ form_widget(form.address, { 'attr': {'placeholder': 'Dirección' } }) }}
+              {{ form_widget(form.address, { 'attr': {'class':'form-control', 'placeholder': 'Dirección' } }) }}
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
               {{ form_errors(form.zipcode)  }}
-              {{ form_widget(form.zipcode, { 'attr': {'placeholder': 'Código postal' } }) }}
+              {{ form_widget(form.zipcode, { 'attr': {'class':'form-control', 'placeholder': 'Código postal' } }) }}
             </div>
           </fieldset>        
 
-          <input class="btn btn-primary" type="submit" value="Registrarme" />
+          <input class="btn btn-primary form-control" type="submit" value="Registrarme">
           <div style="display:none">
             {{ form_end(form) }}
           </div>

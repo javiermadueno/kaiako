@@ -22,15 +22,15 @@
             </div>
         {% endif %}
         <form action="{{ path('user_login_check') }}" method="post" class="mt10">
-            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Usuario"/>
-            <input type="password" id="password" name="_password" placeholder="Contraseña"/>  
+            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Usuario" class="form-control">
+            <input type="password" id="password" name="_password" placeholder="Contraseña" class="form-control">  
             <span style="float:right; width: 100%; text-align: right; margin-top: 2px; margin-right: 7px;">
                 <label for="remember_me">
                     <input type="checkbox" id="remember_me" name="_remember_me" checked="">
                     No cerrar sesión
                 </label>
             </span>
-            <input class="boton boton-submit block" type="submit" value="Acceder">          
+            <input class="boton boton-submit block form-control" type="submit" value="Acceder">          
         </form>
     </div>
 </section>

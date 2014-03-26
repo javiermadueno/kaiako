@@ -17,7 +17,7 @@ body{
     margin-bottom: -1px;
 }
 
-.navbar-inner{
+.navbar-default{
 	background: rgb(12,119,174);
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -26,12 +26,12 @@ body{
     border:none;
 }
 
-.navbar .brand{
+.navbar .navbar-brand{
 	font-family: 'interdim', 'Helevtica Neue', Helvetica, sans-serif;
 	font-weight: 100;
 	color:white;
 }
-.navbar .brand img{
+.navbar .navbar-brand img{
 	height:20px;
 }
 
@@ -308,15 +308,16 @@ body{
 
 #pagination .bullet{
 	display: inline-block;
-	width: 8px;
-	height: 8px;
-	padding: 6px 5px 6px 4px;
+	width: 10px;
+	height: 10px;
+	margin-right: 4px;
+	cursor: pointer;
 }
 
 #pagination .bullet span{
 	display: block;
-	width:8px;
-	height:8px;
+	width:10px;
+	height:10px;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
