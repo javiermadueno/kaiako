@@ -130,7 +130,6 @@ class DefaultController extends Controller
                                                                 $user->getSalt()
                                                                 );
                     $user->setPassword($encodedPassword);
-                    $user->setNewsletter(true);
                     $em->persist($user);
                     $em->flush();
                     
