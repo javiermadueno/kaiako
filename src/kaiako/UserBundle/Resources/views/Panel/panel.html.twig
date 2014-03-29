@@ -1,0 +1,27 @@
+{% extends 'UserBundle:Panel:base.html.twig' %}
+
+{% block body %}
+
+<div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+
+	{% include 'UserBundle:Panel:sidebar.html.twig' %}
+
+	<div id="main-container">
+
+		{% include 'UserBundle:Panel:header.html.twig' %}
+
+		<div id="page-content">
+			{% block content %}{% endblock %}
+		</div>
+
+		{% include 'UserBundle:Panel:footer.html.twig' %}
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block modal %}
+	{% include 'UserBundle:Panel:modal-user-settings.html.twig'%}
+{% endblock %}
+
