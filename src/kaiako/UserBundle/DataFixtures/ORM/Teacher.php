@@ -14,7 +14,7 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface, Conta
 {
 	
 	public function getOrder(){
-		return 40;
+		return 50;
 	}
 
 	private $container;
@@ -27,6 +27,7 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface, Conta
 	public function load(ObjectManager $manager)
 	{
 		$ciudades = $manager->getRepository('AdBundle:Province')->findAll();
+        $idiomas = $manager->getRepository('UserBundle:Language')->findAll();
 
 		for($i=0; $i<500; $i++){
 
@@ -57,6 +58,8 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface, Conta
 			$teacher->setZipcode($this->getCodigoPostal());
 			$teacher->setMobile($this->getTelefono());
 			$teacher->setTelephone($this->getTelefono());
+
+            $teacher->addLanguage($idiomas[array_rand($idiomas)]);
 			
 
 			$teacher->setDate(new \DateTime('now - '.rand(1, 150).' days'));
@@ -161,7 +164,15 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface, Conta
 
     private function getEmpresa()
     {
-    	$empresas = array('Apple', 'Microsoft', 'Abengoa', 'Accenture', 'Everis', 'Movatec', 'Eccuo Ingenieria', 'Icca');
+    	$empresas = array(
+            'Apple', 
+            'Microsoft', 
+            'Abengoa', 
+            'Accenture', 
+            'Everis', 
+            'Movatec', 
+            'Eccuo Ingenieria', 
+            'Icca');
 
     	return $empresas[array_rand($empresas)];     
     }
