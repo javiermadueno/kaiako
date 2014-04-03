@@ -5,6 +5,7 @@ namespace kaiako\AdBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections as Collections;
+use kaiako\UserBundle\Entity\Teacher;
 
 
 /**
