@@ -41,6 +41,11 @@ class Ad
      * @ORM\OneToMany(targetEntity="kaiako\AdBundle\Entity\Schedule", mappedBy="ad")
      */
     protected $schedules;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $title;
     
     /** @ORM\Column(type="string") */
     protected $description;
@@ -78,8 +83,8 @@ class Ad
     public function __construct()
     {
         $this->date = new \DateTime();
-        $this->messages = new \Collections\ArrayCollection();
-        $this->schedules = new \Collections\ArrayCollection();
+        $this->messages = new Collections\ArrayCollection();
+        $this->schedules = new Collections\ArrayCollection();
     }
     
     
@@ -362,5 +367,28 @@ class Ad
     public function getSkiResorts()
     {
         return $this->skiResorts;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Ad
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 }

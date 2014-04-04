@@ -50,7 +50,7 @@ class Usuarios extends AbstractFixture implements OrderedFixtureInterface, Conta
 			$teacher->setNifCif($this->getNif());
 			$teacher->setCompanyName($this->getEmpresa());
 
-			$ciudad = $ciudades[rand(1,29)];
+			$ciudad = $ciudades[array_rand($ciudades)];
 			$teacher->setAddress($this->getDireccion());
 
 			$teacher->setProvince($ciudad);

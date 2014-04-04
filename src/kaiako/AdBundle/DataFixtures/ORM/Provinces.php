@@ -8,7 +8,7 @@
  * con toda la información sobre el copyright y la licencia.
  */
 
-namespace Cupon\CiudadBundle\DataFixtures\ORM;
+namespace kaiako\AdBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
