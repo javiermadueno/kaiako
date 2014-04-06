@@ -4,8 +4,8 @@
 {% block article %} 
 <div>
   <div class="container mt20">
-    <div class="row-fluid">
-      <div class="span4">
+    <div class="row">
+      <div class="col-sm-4 col-md-4">
         <div class="brand">
           <img src="{{ asset('bundles/static/images/logos/logo_azul.png')}}" alt="Beanax">
         </div>
@@ -21,7 +21,7 @@
         </div>
         {% endif %}
       </div>
-      <div class="span3 offset2">
+      <div class="col-lg-offset-2 col-sm-3 col-md-3">
         <div class="register">
           <form class="form-horizontal" action="{{ path('user_student_register', { 'errorMsg': 0 }) }}" method="post" {{ form_enctype(form) }}>
 
@@ -29,18 +29,18 @@
 
               <legend>Datos de acceso</legend>
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.email)  }}
-                {{ form_widget(form.email, { 'attr': {'placeholder': 'Email' } }) }}
+                {{ form_widget(form.email, { 'attr': {'class': 'form-control','placeholder': 'Email' } }) }}
               </div>   
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.password.first) }}
-                {{ form_widget(form.password.first, { 'attr': {'placeholder': 'Contraseña' } }) }}
+                {{ form_widget(form.password.first, { 'attr': {'class': 'form-control','placeholder': 'Contraseña' } }) }}
               </div>         
 
-              <div class="control-group">
-                {{ form_widget(form.password.second, { 'attr': {'placeholder': 'Repita la contraseña' } }) }}
+              <div class="form-group">
+                {{ form_widget(form.password.second, { 'attr': {'class': 'form-control','placeholder': 'Repita la contraseña' } }) }}
               </div>
 
             </fieldset>
@@ -49,19 +49,19 @@
 
               <legend>Datos personales</legend>
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.name)  }}
-                {{ form_widget(form.name, { 'attr': {'placeholder': 'Nombre' } }) }}
+                {{ form_widget(form.name, { 'attr': {'class': 'form-control','placeholder': 'Nombre' } }) }}
               </div>
 
-              <div class="control-group">
+              <div class="form-group">
                 {{ form_errors(form.surnames)  }}
-                {{ form_widget(form.surnames, { 'attr': {'placeholder': 'Apellidos' } }) }}
+                {{ form_widget(form.surnames, { 'attr': {'class': 'form-control', 'placeholder': 'Apellidos' } }) }}
               </div>
 
             </fieldset>
 
-            <input class="btn btn-primary" type="submit" value="Registrarme" />
+            <input class="btn btn-primary form-control" type="submit" value="Registrarme">
 
             <div style="display:none">
               {{ form_end(form) }}

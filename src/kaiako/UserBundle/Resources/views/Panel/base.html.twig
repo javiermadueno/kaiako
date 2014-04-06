@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	
+	<title>{% block title %}Panel de Administracion | Beanax {% endblock %}</title>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon57.png" sizes="57x57') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon72.png" sizes="72x72') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon76.png" sizes="76x76') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon114.png" sizes="114x114') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon120.png" sizes="120x120') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon144.png" sizes="144x144') }}">
+  <link rel="apple-touch-icon" href="{{ asset('bundles/user/img/icon152.png" sizes="152x152') }}">
+
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('bundles/static/css/bootstrap.css') }}">
+		<link rel="stylesheet" href="{{ asset('bundles/user/css/plugins.css')}}">
+		<link rel="stylesheet" href="{{ asset('bundles/user/css/main.css')}}">
+		<link rel="stylesheet" href="{{ asset('bundles/user/css/themes.css')}}">
+	{% endblock %}
+
+	<script src="{{asset('bundles/user/js/vendor/modernizr-2.7.1-respond-1.4.2.min.js') }}"></script>
+</head>
+<body>
+
+	{% block body %}{% endblock %}
+
+	<a href="#" id="to-top"><i class="fa fa-angle-double-up"></i></a>
+
+	{% block modal %}{% endblock %}
+
+	{% block javascripts %}
+	 <!-- Remember to include excanvas for IE8 chart support -->
+   <!--[if IE 8]><script src="js/helpers/excanvas.min.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{{ asset('bundles/user/js/vendor/bootstrap.min.js')}}"></script>
+		<script src="{{ asset('bundles/user/js/plugins.js')}}"></script>
+		<script src="{{ asset('bundles/user/js/app.js')}}"></script>
+	{% endblock %}
+
+	{% block scripts %}{% endblock %}
+</body>
+</html>

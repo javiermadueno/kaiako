@@ -3,7 +3,7 @@
 {% block article %}
 <section class="registro">
 
-	<div class="html_carousel">
+  <div class="html_carousel">
     <div id="slider">
        <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_1.jpg')}}" alt=""></div>
        <div class="slide"><img src="{{ asset('bundles/static/images/background/places1_2.jpg')}}" alt=""></div>
@@ -21,39 +21,39 @@
     <a class="next" id="next" href="#"><i class="fa fa-angle-right fa-3"></i></a>
   </div>
 
-	<div class="container">
-		<div class="row">
+  <div class="container">
+    <div class="row">
 
-			<div class="span4 offset2">
-				<div class="wrapper">
-					<div class="header"><h2>Alumno</h2></div>
-					<div class="cuerpo">
-						<p>Pulsa aqui para regustrate como alumno</p>
-					</div>
-					<div class="footer">
-						<a href="{{path('user_student_register', {errorMsg : 0})}}">
-							<button class="btn btn-primary">Alumno</button>
-						</a>
-					</div>
-				</div>
-			</div>
+      <div class="col-lg-offset-2 col-sm-4 col-md-4">
+        <div class="wrapper">
+          <div class="header"><h2>Alumno</h2></div>
+          <div class="cuerpo">
+            <p>Pulsa aqui para regustrate como alumno</p>
+          </div>
+          <div class="footer">
+            <a href="{{path('user_student_register', {errorMsg : 0})}}">
+              <button class="btn btn-primary">Alumno</button>
+            </a>
+          </div>
+        </div>
+      </div>
 
-			<div class="span4">
-				<div class="wrapper">
-					<div class="header"><h2>Profesor</h2></div>
-					<div class="cuerpo">
-						<p>Pulsa aqui para regustrate como profesor</p>
-					</div>
-					<div class="footer">
-						<a href="{{path('user_teacher_register', {errorMsg : 0})}}">
-							<button class="btn btn-primary">Profesor</button>
-						</a>
-					</div>
-				</div>
-			</div>
+      <div class="col-sm-4 col-md-4">
+        <div class="wrapper">
+          <div class="header"><h2>Profesor</h2></div>
+          <div class="cuerpo">
+            <p>Pulsa aqui para regustrate como profesor</p>
+          </div>
+          <div class="footer">
+            <a href="{{path('user_teacher_register', {errorMsg : 0})}}">
+              <button class="btn btn-primary">Profesor</button>
+            </a>
+          </div>
+        </div>
+      </div>
 
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
 
 <script src="{{ asset('bundles/static/js/jquery.fred.js')}}"></script>

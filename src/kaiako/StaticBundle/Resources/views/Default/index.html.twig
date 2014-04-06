@@ -24,7 +24,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="portada span9">
+      <div class="portada col-sm-10 col-md-10">
       <h2>Si sabes que quieres aprender <br> Encuentra quien quieres que te enseñe</h2>
       <form action="{{path('filter_ads')}}" method="post">
          <select name="filter[province]" id="province">
@@ -42,7 +42,7 @@
         <input type="text" id="datepicker_out" name="filter[datepicker_out]">
 
         <select name="filter[hour_in]" id="hour_in">
-          <option value="" selected>Desde</option>
+          <option value="" selected="">Desde</option>
           <option value="00:00">00:00</option>
           <option value="01:00">1:00</option>
           <option value="02:00">2:00</option>
@@ -69,7 +69,7 @@
           <option value="23:00">23:00</option>
         </select>
         <select name="filter[hour_out]" id="hour_out">
-          <option value="" selected>Hasta</option>
+          <option value="" selected="">Hasta</option>
           <option value="00:00">00:00</option>
           <option value="01:00">1:00</option>
           <option value="02:00">2:00</option>
@@ -118,18 +118,18 @@ $(function() {
 <section class="masdeportes">
   <div class="container">
     <div class="row">
-      <div class="span4">
-        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+      <div class="col-sm-4 col-md-4">
+        <img src="holder.js/100%x300" alt="">
         <h3>Deporte</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, impedit.</p>
       </div>
-      <div class="span4">
-        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+      <div class="col-sm-4 col-md-4">
+        <img src="holder.js/100%x300" alt="">
         <h3>Deporte</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, iste.</p>
       </div>
-      <div class="span4">
-        <img src="{{asset('bundles/static/images/no_image.jpg')}}" alt="">
+      <div class="col-sm-4 col-md-4">
+        <img src="holder.js/100%x300" alt="">
         <h3>Deporte</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, labore?</p>
       </div>

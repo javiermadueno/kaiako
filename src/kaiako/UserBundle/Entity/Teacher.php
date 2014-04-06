@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints as DoctrineAssert;
 use Symfony\Component\Validator\ExecutionContext;
+use kaiako\AdBundle\Entity\Province;
+use kaiako\AdBundle\Entity\Ad;
 
 
 /**
@@ -96,17 +98,17 @@ class Teacher implements UserInterface
      */
     protected $address;
 
-    /*
+    /**
     * @ORM\Column(type="string")
     */
     protected $town;
 
-    /*
+    /**
     * @ORM\Column(type="string")
     */
     protected $province;
 
-    /*
+    /**
     * @ORM\Column(type="string")
     */
     protected $zipcode;
@@ -121,7 +123,7 @@ class Teacher implements UserInterface
     */
     protected $languages;
     
-    /*
+    /**
     * @ORM\Column(type="string")
     */
     protected $photo;
@@ -636,6 +638,15 @@ class Teacher implements UserInterface
         $this->province = $province;
 
         return $this;
+    }
+
+    public function setPhoto($url){
+        $this->photo = $url;
+        return $this;
+    }
+
+    public function getPhoto(){
+        return $this->photo;
     }
     
 }
