@@ -10,9 +10,13 @@ use kaiako\AdBundle\Entity\Ad;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('AdBundle:Default:index.html.twig', array('name' => $name));
+    public function indexAction($id)
+    {   
+        $em = $this->getDoctrine()->getManager();
+
+        $ad = $em->getRepository('AdBundle:Ad')->findOneById($id);
+
+        return $this->render('AdBundle:Default:index.html.twig', array('ad' => $ad));
     }
     
     public function filterAdsAction(){

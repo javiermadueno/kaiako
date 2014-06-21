@@ -1,0 +1,58 @@
+section{
+	padding: 30px 0;
+}
+
+.wrapper{
+	padding:20px;
+	background:none;
+	box-shadow:none;
+}
+
+.resumen, .profesor{
+	background: #f1f1f1;
+	border:1px solid #d3d3d3;
+	border-radius: 3px;
+	min-height:400px;
+	text-align: center;
+}
+
+.precio,
+.ciudad,
+.horarios,
+.total,
+.contacto{
+	margin:10px 0;
+	text-align: center;
+}
+
+.total{
+	margin-top: 40px;
+}
+
+.contacto{
+	margin-top: 40px;
+	font-size: 1.1em;
+}
+
+.resumen span{
+	color: #4578AB;
+	font-size: 1.1em;
+	display: block;
+}
+
+.resumen span.numero{
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.table tr > td:nth-child(2){
+	text-align: right;
+}
+
+.table td[colspan]{
+	text-align: center;
+}
+
+.fl{ float: left;}
+.tac{ text-align:center;}
+

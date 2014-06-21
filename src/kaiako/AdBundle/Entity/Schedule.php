@@ -32,7 +32,7 @@ class Schedule
     protected $timeTo;
     
     /**
-     * @ORM\ManyToMany(targetEntity="kaiako\AdBundle\Entity\Day", inversedBy="schedules")
+     * @ORM\oneToMany(targetEntity="kaiako\AdBundle\Entity\Day", mappedBy="schedules")
      * @ORM\JoinColumn(name="day_id", referencedColumnName="id", nullable=false)
      */
     protected $days;
